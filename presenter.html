@@ -119,7 +119,7 @@
     <div class="controls">
 
         <button class="nav-button" onclick="previousSlide()">← Previous</button>
-        <span class="slide-indicator">Slide <span id="current">1</span> / 10</span>
+        <span class="slide-indicator">Slide <span id="current">1</span> / 11</span>
         <button class="nav-button" onclick="nextSlide()">Next →</button>
         <div class="voice-status inactive" id="voiceStatus">
             <span>🎤</span>
@@ -127,15 +127,15 @@
         </div>
     </div>
 
-    <iframe id="slideFrame" class="slide-frame" src="slide1.html"></iframe>
+    <iframe id="slideFrame" class="slide-frame" src="slide0.html"></iframe>
 
     <div class="help-text">
-        Say "next", "previous", "slide 3", or "controller" • Press 1-9, 0 for direct navigation
+        Say "next", "previous", "slide 3", or "controller" • Press 0 (intro), 1-9 for direct navigation
     </div>
 
     <script>
         const SLIDES = [
-            "slide1.html", "slide2.html", "slide3.html",
+            "slide0.html", "slide1.html", "slide2.html", "slide3.html",
             "slide4.html", "slide5.html", "slide6.html", "slide6a.html", "slide7.html", "slide8.html", "slide9.html"
         ];
         let currentIndex = 0;
@@ -169,10 +169,10 @@
             if (e.key === 'ArrowRight') nextSlide();
             else if (e.key === 'ArrowLeft') previousSlide();
             else if (e.key >= '1' && e.key <= '9') {
-                updateSlide(parseInt(e.key) - 1);
+                updateSlide(parseInt(e.key)); // Slide 1-9 (index 1-9)
             }
             else if (e.key === '0') {
-                updateSlide(9); // Slide 10 (index 9)
+                updateSlide(0); // Slide 0 (index 0) - Intro slide
             }
         });
 
