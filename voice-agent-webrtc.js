@@ -228,7 +228,7 @@ Respond to commands like "demo scenario", "switch to Hindi", "explain more", or 
             session: {
                 modalities: ['text', 'audio'],
                 instructions: this.AGENT_PROMPT,
-                voice: 'coral',
+                voice: 'alloy',
                 input_audio_format: 'pcm16',
                 output_audio_format: 'pcm16',
                 input_audio_transcription: {
