@@ -36,14 +36,10 @@
         :root {
             --dark-earth: #342e29;
             --rich-red: #86312b;
-            --forest-green: #344736;
             --deep-blue: #002140;
             --soft-gray: #e7e4df;
             --off-white: #fdfbf7;
             --light-blue: #b0ddf1;
-            --coral-orange: #ff774a;
-            --warm-yellow: #ffc083;
-            --soft-green: #b8dc99;
         }
 
         * {
@@ -54,218 +50,104 @@
 
         body {
             font-family: 'ABC Arizona Regular', serif;
-            background: linear-gradient(135deg, #002140 0%, #344736 30%, #86312b 70%, #342e29 100%);
-            color: white;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: var(--dark-earth);
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(176, 221, 241, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(184, 220, 153, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(255, 119, 74, 0.1) 0%, transparent 50%);
-            pointer-events: none;
         }
 
         .slide {
             width: 100%;
-            max-width: 1100px;
-            text-align: center;
-            z-index: 1;
+            max-width: 1000px;
+            height: 85vh;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            padding: 3rem;
             position: relative;
         }
 
-        .main-title {
-            font-family: 'ABC Arizona Light', serif;
-            font-size: 4rem;
-            color: #D4AF37;
-            margin-bottom: 1rem;
-            line-height: 1.1;
-            text-shadow: 0 4px 8px rgba(0,0,0,0.5);
-            letter-spacing: -1px;
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            border-bottom: 2px solid var(--soft-gray);
+            padding-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-family: 'ABC Arizona Regular', serif;
+            font-size: 2.2rem;
+            color: var(--dark-earth);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
         }
 
         .subtitle {
-            font-family: 'ABC Arizona Regular', serif;
-            font-size: 1.8rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 3rem;
-            font-weight: 300;
-        }
-
-        .overview-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 2rem;
-            margin-bottom: 3rem;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .overview-card {
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 2rem 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .overview-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-        }
-
-        .card-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .card-title {
             font-family: 'ABC Arizona Sans Regular', sans-serif;
-            font-size: 1.1rem;
-            color: #D4AF37;
-            margin-bottom: 0.8rem;
-            font-weight: bold;
-        }
-
-        .card-description {
-            font-family: 'ABC Arizona Sans Regular', sans-serif;
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.4;
-        }
-
-        .highlights-section {
-            background: rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(5px);
-            border-radius: 20px;
-            padding: 2rem;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            margin-bottom: 2rem;
-        }
-
-        .highlights-title {
-            font-family: 'ABC Arizona Sans Regular', sans-serif;
-            font-size: 1.2rem;
-            color: #D4AF37;
-            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            color: var(--rich-red);
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .highlights-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            text-align: left;
-        }
-
-        .highlight-item {
+        .content {
+            flex-grow: 1;
             display: flex;
-            align-items: flex-start;
-            gap: 0.8rem;
-        }
-
-        .highlight-icon {
-            color: #D4AF37;
-            font-size: 1.2rem;
-            margin-top: 0.1rem;
-            flex-shrink: 0;
-        }
-
-        .highlight-text {
-            font-family: 'ABC Arizona Sans Regular', sans-serif;
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.9);
-            line-height: 1.4;
-        }
-
-        .footer-text {
-            font-family: 'ABC Arizona Sans Regular', sans-serif;
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.7);
+            flex-direction: column;
+            justify-content: center;
             text-align: center;
         }
 
-        .brand-signature {
-            color: #D4AF37;
+        .welcome-section {
+            background: linear-gradient(135deg, var(--light-blue) 0%, rgba(176, 221, 241, 0.3) 100%);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 33, 64, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .welcome-section h2 {
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 1.3rem;
+            color: var(--deep-blue);
+            margin-bottom: 1rem;
             font-weight: bold;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .welcome-section p {
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 1rem;
+            color: var(--dark-earth);
+            line-height: 1.6;
+            margin-bottom: 1rem;
         }
 
-        .main-title {
-            animation: fadeInUp 1s ease-out;
+        .agenda-section {
+            background: linear-gradient(135deg, var(--rich-red) 0%, rgba(134, 49, 43, 0.8) 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
         }
 
-        .subtitle {
-            animation: fadeInUp 1s ease-out 0.2s both;
+        .agenda-section h3 {
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .overview-grid {
-            animation: fadeInUp 1s ease-out 0.4s both;
-        }
-
-        .highlights-section {
-            animation: fadeInUp 1s ease-out 0.6s both;
-        }
-
-        .footer-text {
-            animation: fadeInUp 1s ease-out 0.8s both;
-        }
-
-        @media (max-width: 1024px) {
-            .main-title {
-                font-size: 3rem;
-            }
-            
-            .overview-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 1.5rem;
-            }
-            
-            .highlights-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .main-title {
-                font-size: 2.5rem;
-            }
-            
-            .subtitle {
-                font-size: 1.4rem;
-            }
-            
-            .overview-grid {
-                grid-template-columns: 1fr;
-            }
+        .agenda-list {
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            opacity: 0.95;
         }
     </style>
     <link rel="stylesheet" href="slide-fixes.css">
@@ -273,85 +155,27 @@
 
 <body>
     <div class="slide">
-        <h1 class="main-title">BI Team Review</h1>
-        <div class="subtitle">June 2025 • Data-Driven Excellence</div>
-
-        <div class="overview-grid">
-            <div class="overview-card">
-                <span class="card-icon">📊</span>
-                <div class="card-title">Performance Analytics</div>
-                <div class="card-description">
-                    BSC metrics, conversion rates, and data enrichment achievements with interactive visualizations
-                </div>
-            </div>
-            
-            <div class="overview-card">
-                <span class="card-icon">🎯</span>
-                <div class="card-title">Strategic Progress</div>
-                <div class="card-description">
-                    Project updates, team achievements, and critical workflow implementations across all teams
-                </div>
-            </div>
-            
-            <div class="overview-card">
-                <span class="card-icon">🤖</span>
-                <div class="card-title">AI Innovation</div>
-                <div class="card-description">
-                    Live voice agent demo with OpenAI Realtime API showcasing bilingual communication assessment
-                </div>
-            </div>
+        <div class="header">
+            <h1>BI Team Review</h1>
+            <div class="subtitle">June 2025 • Data-Driven Excellence</div>
         </div>
 
-        <div class="highlights-section">
-            <div class="highlights-title">Key Highlights This Month</div>
-            <div class="highlights-grid">
-                <div class="highlight-item">
-                    <span class="highlight-icon">🚀</span>
-                    <div class="highlight-text">
-                        <strong>Data Enrichment Success:</strong> 200 deals enriched, exceeding 3K promise by 166%
-                    </div>
-                </div>
-                
-                <div class="highlight-item">
-                    <span class="highlight-icon">💡</span>
-                    <div class="highlight-text">
-                        <strong>Voice Agent Breakthrough:</strong> Real-time bilingual sales evaluation system deployed
-                    </div>
-                </div>
-                
-                <div class="highlight-item">
-                    <span class="highlight-icon">⚙️</span>
-                    <div class="highlight-text">
-                        <strong>Process Optimization:</strong> Critical workflows active across Bewild, CE, and Member Onboarding
-                    </div>
-                </div>
-                
-                <div class="highlight-item">
-                    <span class="highlight-icon">📈</span>
-                    <div class="highlight-text">
-                        <strong>Interactive Visualization:</strong> 75% complete with 360° plot selection and video integration
-                    </div>
-                </div>
-                
-                <div class="highlight-item">
-                    <span class="highlight-icon">🌟</span>
-                    <div class="highlight-text">
-                        <strong>Growth Opportunities:</strong> Systematic analysis of deal performance vs. coffee meet-ups
-                    </div>
-                </div>
-                
-                <div class="highlight-item">
-                    <span class="highlight-icon">🎪</span>
-                    <div class="highlight-text">
-                        <strong>Team Excellence:</strong> Following our philosophy of "Done better than perfect"
-                    </div>
+        <div class="content">
+            <div class="welcome-section">
+                <h2>Welcome to Our Monthly Review</h2>
+                <p>This presentation showcases our team's achievements, performance metrics, and strategic initiatives that are transforming Beforest's sustainable living mission through data-driven innovation.</p>
+                <p><strong>Today's Focus:</strong> Performance analytics, project updates, BSC metrics, and our breakthrough AI voice agent demonstration.</p>
+            </div>
+
+            <div class="agenda-section">
+                <h3>What We'll Cover</h3>
+                <div class="agenda-list">
+                    Deal Generation Progress • Team Updates & Achievements<br>
+                    Project Management & Data Buckets • Performance Metrics<br>
+                    BSC Priority Goals • Notable Mentions<br>
+                    Live Voice Agent Demo • Our Team Philosophy
                 </div>
             </div>
-        </div>
-
-        <div class="footer-text">
-            Transforming landscapes through data-driven sustainable living<br>
-            <span class="brand-signature">Beforest BI Team • Building the future, one prototype at a time</span>
         </div>
     </div>
 </body>

@@ -69,6 +69,28 @@ NODE_ENV=production
 
 ## Production Hosting
 
+### Railway Deployment (Recommended for Voice Agent)
+```bash
+# 1. Connect GitHub repository to Railway
+# 2. Set environment variables in Railway dashboard:
+#    OPENAI_API_KEY=your_key_here
+#    NODE_ENV=production
+# 3. Deploy automatically triggers
+
+# Railway provides HTTPS by default - perfect for voice agent!
+```
+
+### Voice Agent Troubleshooting on Railway
+```bash
+# Check Railway logs for these messages:
+# ✅ "OPENAI_API_KEY configured: Yes" 
+# ✅ "Ephemeral session created successfully"
+# ❌ If you see "API Key not configured" - check environment variables
+
+# Test session endpoint:
+curl -X POST https://your-app.railway.app/session
+```
+
 ### Vercel Deployment
 ```bash
 # Install Vercel CLI
@@ -76,6 +98,7 @@ npm i -g vercel
 
 # Deploy to Vercel
 vercel --prod
+# Note: Voice agent may have limitations on Vercel due to serverless functions
 ```
 
 ### Heroku Deployment

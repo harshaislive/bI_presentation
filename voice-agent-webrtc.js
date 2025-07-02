@@ -203,18 +203,32 @@ Respond to commands like "demo scenario", "switch to Hindi", "explain more", or 
 
     async getEphemeralKey() {
         try {
-            // Try to get ephemeral key from our server
-            const response = await fetch('/session');
+            // Auto-detect protocol (HTTP vs HTTPS)
+            const protocol = window.location.protocol;
+            const sessionUrl = '/session';
+            
+            console.log(`🔑 Requesting ephemeral key from ${protocol}//${window.location.host}${sessionUrl}`);
+            
+            const response = await fetch(sessionUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            
             if (response.ok) {
                 const data = await response.json();
+                console.log('✅ Ephemeral key received from server');
                 return data.client_secret.value;
+            } else {
+                const errorText = await response.text();
+                console.error('❌ Session request failed:', response.status, errorText);
+                throw new Error(`Server session failed: ${response.status} ${errorText}`);
             }
         } catch (error) {
-            console.log('Server session endpoint not available, using API key directly');
+            console.error('❌ Failed to get ephemeral key:', error);
+            throw new Error(`Voice agent requires server configuration. Error: ${error.message}`);
         }
-
-        // Fallback error - API key should be configured via environment variables
-        throw new Error('Voice agent requires server configuration. Please set OPENAI_API_KEY environment variable and start the server with npm start.');
     }
 
     configureSession() {
