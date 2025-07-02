@@ -1,0 +1,91 @@
+{
+    "bmc": {
+      "mission": "Inspire sustainable living by transforming landscapes.",
+      "customerSegments": [
+        "Retirees/empty nesters looking for a second home with minimal maintenance",
+        "Nature/permaculture/organic food enthusiasts who value sustainable living",
+        "Urban dwellers seeking sustainable lifestyles who've considered farm purchase but face hassles"
+      ],
+      "valuePropositions": [
+        "Trusted partner in farm ownership journey",
+        "Exaggerated experience via collective ownership",
+        "Protection of legacy",
+        "Security of experts",
+        "Safety of diversification",
+        "Inclusive community"
+      ],
+      "customerRelationships": "One-to-one, transparent, authentic communication with a focus on emotional connection to nature and community.",
+      "subBrands": {
+        "BeWild": "Organic produce arm offering products like coffee, rice, honey, etc.",
+        "Belong": "Barefoot luxury experiences like glamping, nature walks, and community activities."
+      },
+      "commonProspectConcerns": [
+        "Financial commitment for long-term investment",
+        "Community dynamics and fitting in with other members",
+        "Return on investment and potential appreciation",
+        "Maintenance and management of the collective property",
+        "Legal structure and ownership rights",
+        "Access and usage frequency"
+      ]
+    },
+    "brandGuidelines": {
+      "tone": {
+        "assertive": "70% - Direct and clear communication",
+        "authentic": "30% - Honest and genuine expression"
+      },
+      "guidelines": [
+        "Avoid superlatives, hyperbole, or exaggeration",
+        "Use simple, fact-based language",
+        "Focus on sustainability, community, and long-term benefits",
+        "Inspire curiosity with deep-reaching questions"
+      ],
+      "brandPersona": "Vriksha - Strong, resilient, no-nonsense, speaks softly with facts, avoids confrontation or comparisons.",
+      "purpose": "Enable responsible choices, help stewards create ecological and economic resilience.",
+      "extended": {
+        "whyWeBe": "There was a time before the Earth's green spaces were taken over by glass and concrete. A time when our ancestors lived off the land, gave back to the land, and handed down the land richer and greener than they inherited it. We at Beforest have found a way to recreate that time, for the few who believe that this was a better way to live.",
+        "whatWeBelieve": "We believe that there is nothing in nature as resilient as nature itself. And yet, today, nature needs helping hands to put back in nature's bank what generations before us have taken on loan, to restore the green wealth meant for our future generations to enjoy.",
+        "visionAndPurpose": {
+          "vision": "To create landscapes that inspire people and support life in all its forms.",
+          "reason": "Every urban centre experiences the same set of problems-traffic, pollution, lack of access to water or good food, diminishing commons, lack of parks. When life's basic needs-clean air, clean water and good food-have become a struggle, then something fundamental has broken down in the design.",
+          "purpose": "For those who are willing to take action towards a better planet, ready to make the more responsible choices, Beforest is here to translate this intent into reality, inspiration into inspired action."
+        },
+        "copyStyle": "Our tone expresses our deep commitment, sound science, authenticity, and calm self-assurance. We avoid superlatives unless proven with data. We avoid hyperbole, poetry, lyricism and drama. We speak in simple sentences, provide hard facts, and information that awakens an 'aha' moment in readers."
+      }
+    },
+    "subBrandsDetailed": {
+      "BeWild": {
+        "description": "BeWild is the produce arm of Beforest. From the food forests we nurture and partner with comes a wealth of responsibly grown coffee, rice, vegetables, fruits and spices that benefit the planet, our consumers and the very landscape in which our collective exists.",
+        "principles": [
+          "Restoring soil health",
+          "Maintenance of diversity",
+          "Animal and farmer welfare",
+          "Efficient and fair use of natural/local resources"
+        ],
+        "products": ["Coffee", "Rice", "Honey", "Spices", "Fruits & Vegetables"]
+      },
+      "Belong": {
+        "description": "Belong is not luxury the way the world defines it-but a luxury compared to what the world of today offers. We call this barefoot luxury: a getaway in any of our collectives where you open your eyes, your ears and your pores and let the luxury of nature into your being.",
+        "offerings": ["Glamping", "Earthhomes", "Nature walks", "Birding", "Yoga", "Organic Dining"]
+      }
+    },
+    "bespokeEngine": {
+      "overview": "The Beforest Bespoke Engine is a web-based communication assessment platform designed to evaluate employee interactions with prospects through scenario-based questions. It integrates with Supabase for backend data management and external webhooks for automated operations.",
+      "workflow": [
+        "Employee initiates an assessment via the UI",
+        "A new session is created in Supabase",
+        "Questions are presented one at a time",
+        "Employees respond via text or video, with responses saved in Supabase",
+        "Assessment submission stops the timer",
+        "Session is marked as completed"
+      ],
+      "commonScenarios": [
+        "Prospect concerned about financial commitment for long-term investment",
+        "Prospect worried about community dynamics and fitting in with other members",
+        "Prospect asking about return on investment and potential appreciation",
+        "Prospect concerned about maintenance and management of collective property",
+        "Prospect confused about legal structure and ownership rights",
+        "Prospect unsure about access and usage frequency"
+      ]
+    },
+    "fullContext": "Beforest's mission is to inspire sustainable living by transforming landscapes. Their customer segments include retirees/empty nesters, nature enthusiasts, and urban dwellers seeking sustainable lifestyles who've considered farm purchases but face hassles. Beforest provides value through trusted partnerships, collective ownership benefits, legacy protection, expert security, diversification safety, and an inclusive community. Their customer relationships are characterized by one-to-one, transparent communication focusing on emotional connections to nature and community. They have two sub-brands: BeWild (organic produce like coffee, rice, and honey) and Belong (barefoot luxury experiences including glamping and nature walks). The brand tone is assertive (70%) and authentic (30%), avoiding superlatives and using fact-based language. Their brand persona, Vriksha, is strong, resilient, and speaks with facts. Beforest's purpose is to enable responsible choices and help create ecological and economic resilience, with messaging focused on sustainability, community, and long-term benefits. Common prospect concerns include financial commitment, community dynamics, ROI, maintenance, legal structure, and access frequency."
+  }

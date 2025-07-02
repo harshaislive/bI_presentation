@@ -1,0 +1,26 @@
+{
+    "name": "beforest-bi-presentation",
+    "version": "1.0.0",
+    "description": "BI Team Review Presentation with Voice Agent Demo - June 2025",
+    "main": "server-session.js",
+    "scripts": {
+        "start": "node server-session.js",
+        "dev": "nodemon server-session.js",
+        "prod": "NODE_ENV=production node server-session.js",
+        "serve": "npx http-server . -p 8080 -c-1",
+        "build": "echo 'No build step required - static files ready'",
+        "old-websocket": "node server.js"
+    },
+    "dependencies": {
+      "ws": "^8.14.0",
+      "express": "^4.18.2",
+      "cors": "^2.8.5",
+      "dotenv": "^16.3.1"
+    },
+    "devDependencies": {
+      "nodemon": "^3.0.1"
+    },
+    "keywords": ["openai", "realtime", "websocket", "proxy", "voice"],
+    "author": "Beforest BI Team",
+    "license": "MIT"
+  }

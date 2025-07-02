@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BSC Metrics & Targets - Operations & Process</title>
+    <link rel="stylesheet" href="slide-fixes.css">
+    <style>
+        @font-face {
+            font-family: 'ABC Arizona Flare';
+            src: url('./fonts/ABCArizonaFlare-Regular-Trial.woff2') format('woff2'),
+                 url('./fonts/ABCArizonaFlare-Regular-Trial.woff') format('woff');
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'ABC Arizona Flare';
+            src: url('./fonts/ABCArizonaFlare-Light-Trial.woff2') format('woff2'),
+                 url('./fonts/ABCArizonaFlare-Light-Trial.woff') format('woff');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'ABC Arizona Sans';
+            src: url('./fonts/ABCArizonaSans-Regular-Trial.woff2') format('woff2'),
+                 url('./fonts/ABCArizonaSans-Regular-Trial.woff') format('woff');
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        body {
+            font-family: 'ABC Arizona Sans', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #344736 0%, #002140 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slide-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .slide-header h1 {
+            font-family: 'ABC Arizona Flare', serif;
+            font-size: 2.1em;
+            font-weight: 300;
+            margin: 0 0 10px 0;
+            color: #D4AF37;
+        }
+
+        .slide-header .subtitle {
+            font-size: 1.1em;
+            color: #B8B8B8;
+            margin: 0;
+        }
+
+        .metrics-container {
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 0 auto;
+            max-width: 1200px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .metrics-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9em;
+        }
+
+        .metrics-table th {
+            background: rgba(52, 71, 54, 0.8);
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+            font-family: 'ABC Arizona Flare', serif;
+            font-weight: 400;
+            font-size: 1em;
+        }
+
+        .metrics-table td {
+            padding: 10px 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .metrics-table tr:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .metric-name {
+            font-weight: 500;
+            color: #ffffff !important;
+        }
+
+        .target-value {
+            color: #FFD700 !important;
+            font-weight: 600;
+        }
+
+        .status-value {
+            font-weight: 600;
+            color: #ffffff !important;
+        }
+
+        .status-critical {
+            color: #ff4757 !important;
+            font-weight: 700;
+        }
+
+        .status-needs-attention {
+            color: #ffa502 !important;
+            font-weight: 700;
+        }
+
+        .status-on-track {
+            color: #2ed573 !important;
+            font-weight: 700;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .indicator-critical {
+            background: rgba(255, 107, 107, 0.2);
+            color: #ff6b6b;
+        }
+
+        .indicator-attention {
+            background: rgba(255, 167, 38, 0.2);
+            color: #ffa726;
+        }
+
+        .indicator-on-track {
+            background: rgba(102, 187, 106, 0.2);
+            color: #66bb6a;
+        }
+
+        .indicator-pace-up {
+            background: rgba(255, 193, 7, 0.2);
+            color: #ffc107;
+        }
+
+        .priority-note {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .priority-note .icon {
+            font-size: 1.5em;
+            margin-bottom: 8px;
+            color: #D4AF37;
+        }
+
+        .priority-note p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #D4AF37;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+        }
+
+            .slide-header h1 {
+                font-size: 1.8em;
+            }
+
+            .metrics-table {
+                font-size: 0.8em;
+            }
+
+            .metrics-table th,
+            .metrics-table td {
+                padding: 8px 10px;
+        }
+
+            .metrics-table th:nth-child(4),
+            .metrics-table td:nth-child(4) {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-header">
+        <h1>BSC Metrics & Targets (Part 2)</h1>
+        <p class="subtitle">Operations & Process Metrics • July Priority Goals</p>
+        </div>
+
+    <div class="metrics-container">
+        <table class="metrics-table">
+            <thead>
+                <tr>
+                    <th style="width: 50%;">Metric</th>
+                    <th style="width: 20%;">Target</th>
+                    <th style="width: 20%;">Current Status</th>
+                    <th style="width: 10%;">Indicator</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="metric-name">Percentage digitalization achieved (team-wise)</td>
+                    <td class="target-value">20% YoY</td>
+                    <td class="status-value status-on-track">Current status will be established by July</td>
+                    <td><span class="status-indicator indicator-on-track">On Track</span></td>
+                </tr>
+                <tr>
+                    <td class="metric-name">Number of critical workflows</td>
+                    <td class="target-value">1 per quarter per team</td>
+                    <td class="status-value status-on-track">Active with Bewild, CE, Member Onboarding. In-progress for other teams.</td>
+                    <td><span class="status-indicator indicator-pace-up">Pace-up</span></td>
+                </tr>
+                <tr>
+                    <td class="metric-name">Number of bottlenecks identified</td>
+                    <td class="target-value">1 per quarter</td>
+                    <td class="status-value status-on-track">In-progress, will be established by July end</td>
+                    <td><span class="status-indicator indicator-on-track">On Track</span></td>
+                </tr>
+                <tr>
+                    <td class="metric-name">Number of solutions proposed</td>
+                    <td class="target-value">1 per quarter</td>
+                    <td class="status-value status-on-track">In-progress</td>
+                    <td><span class="status-indicator indicator-on-track">On Track</span></td>
+                </tr>
+            </tbody>
+        </table>
+                    </div>
+                    
+    <div class="priority-note">
+        <div class="icon">⚙️</div>
+        <p>Operations & Process optimization metrics for systematic improvement</p>
+    </div>
+
+
+</body>
+</html> 

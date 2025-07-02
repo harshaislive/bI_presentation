@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management Initiatives - June 2025</title>
+    
+    <style>
+        @font-face {
+            font-family: 'ABC Arizona Regular';
+            src: url('./fonts/ABCArizonaFlare-Regular-Trial.woff2') format('woff2'),
+                url('./fonts/ABCArizonaFlare-Regular-Trial.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'ABC Arizona Light';
+            src: url('./fonts/ABCArizonaFlare-Light-Trial.woff2') format('woff2'),
+                url('./fonts/ABCArizonaFlare-Light-Trial.woff') format('woff');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'ABC Arizona Sans Regular';
+            src: url('./fonts/ABCArizonaSans-Regular-Trial.woff2') format('woff2'),
+                 url('./fonts/ABCArizonaSans-Regular-Trial.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        :root {
+            --dark-earth: #342e29;
+            --rich-red: #86312b;
+            --forest-green: #344736;
+            --deep-blue: #002140;
+            --soft-gray: #e7e4df;
+            --off-white: #fdfbf7;
+            --warm-yellow: #ffc083;
+            --olive-green: #415c43;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'ABC Arizona Regular', serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: var(--dark-earth);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .slide {
+            width: 100%;
+            max-width: 1000px;
+            height: 85vh;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            padding: 3rem;
+            position: relative;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            border-bottom: 2px solid var(--soft-gray);
+            padding-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-family: 'ABC Arizona Regular', serif;
+            font-size: 2.2rem;
+            color: var(--dark-earth);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 1rem;
+            color: var(--rich-red);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .initiative-card {
+            background: linear-gradient(135deg, var(--warm-yellow) 0%, rgba(255, 192, 131, 0.3) 100%);
+            padding: 1.8rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 192, 131, 0.4);
+            position: relative;
+        }
+
+        .initiative-card.crm-integration {
+            background: linear-gradient(135deg, var(--olive-green) 0%, rgba(65, 92, 67, 0.3) 100%);
+        }
+
+        .initiative-card h3 {
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 1.2rem;
+            color: var(--dark-earth);
+            margin-bottom: 0.8rem;
+            font-weight: bold;
+            border-bottom: 1px solid rgba(52, 46, 41, 0.2);
+            padding-bottom: 0.5rem;
+        }
+
+        .initiative-card.crm-integration h3 {
+            color: var(--forest-green);
+            border-bottom-color: rgba(52, 71, 54, 0.2);
+        }
+
+        .description {
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 0.85rem;
+            color: var(--dark-earth);
+            line-height: 1.4;
+            margin-bottom: 0.8rem;
+        }
+
+        .details-section {
+            background-color: rgba(255, 255, 255, 0.6);
+            padding: 0.8rem;
+            border-radius: 6px;
+            border-left: 3px solid var(--deep-blue);
+        }
+
+        .initiative-card.crm-integration .details-section {
+            border-left-color: var(--forest-green);
+        }
+
+        .details-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .details-list li {
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 0.8rem;
+            color: var(--deep-blue);
+            margin-bottom: 0.4rem;
+            padding-left: 1.2rem;
+            position: relative;
+            line-height: 1.3;
+        }
+
+        .details-list li:before {
+            content: "▸";
+            color: var(--rich-red);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .details-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .status-indicator {
+            position: absolute;
+            top: 1.2rem;
+            right: 1.2rem;
+            font-size: 0.7rem;
+            padding: 0.3rem 0.6rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--deep-blue);
+            border-radius: 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .slide-navigation {
+            position: absolute;
+            bottom: 1rem;
+            left: 1.5rem;
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .nav-button {
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 0.7rem;
+            padding: 0.4rem 0.8rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--deep-blue);
+            text-decoration: none;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 33, 64, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background-color: var(--warm-yellow);
+            transform: translateY(-1px);
+        }
+
+        .nav-button:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .slide-number {
+            position: absolute;
+            bottom: 1rem;
+            right: 1.5rem;
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 0.8rem;
+            color: var(--deep-blue);
+            opacity: 0.6;
+        }
+    </style>
+    <link rel="stylesheet" href="slide-fixes.css">
+</head>
+
+<body>
+    <div class="slide">
+        <div class="header">
+            <h1>Project Management Initiatives</h1>
+            <div class="subtitle">BI Team Review - June 2025</div>
+        </div>
+
+        <div class="content">
+            <div class="initiative-card">
+                <div class="status-indicator">Active</div>
+                <h3>Project Digitalization</h3>
+                <div class="description">
+                    Actively managed using Zoho Projects with comprehensive internal audit and observation processes in place.
+                </div>
+                <div class="details-section">
+                    <ul class="details-list">
+                        <li>Currently conducting internal audit and observations</li>
+                        <li>Planning site visit to collective this month</li>
+                        <li>Starting with Hyderabad location for initial assessment</li>
+                        <li>Goal: Integrate every aspect of work from all collectives into one data pipeline.</li>
+                        
+                    </ul>
+                </div>
+            </div>
+
+            <div class="initiative-card crm-integration">
+                <div class="status-indicator">Active</div>
+                <h3>Data Buckets</h3>
+                <div class="description">
+                    We have a solid capturing mechanism right now with data coming across from various WhatsApp groups and we have also developed a pipeline to extract all data from our Google drives and process them into one big Knowledge repo.
+                </div>
+                <div class="details-section">
+                    <ul class="details-list">
+                        <li>Data capturing mechanism from various WhatsApp groups</li>
+                        <li>Pipeline to extract all data from Google drives</li>
+                        <li>Processing into one big Knowledge repository</li>
+                        <li>This will be a key action in Digitalization</li>
+                        <li>These data buckets help us in fulfilling quick use-cases and retrieval with AI</li>
+                    </ul>
+                </div>
+            </div>
+
+
+    </div>
+</body>
+</html> 

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Infrastructure Progress - June 2025</title>
+    
+    <style>
+        @font-face {
+            font-family: 'ABC Arizona Regular';
+            src: url('./fonts/ABCArizonaFlare-Regular-Trial.woff2') format('woff2'),
+                url('./fonts/ABCArizonaFlare-Regular-Trial.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'ABC Arizona Light';
+            src: url('./fonts/ABCArizonaFlare-Light-Trial.woff2') format('woff2'),
+                url('./fonts/ABCArizonaFlare-Light-Trial.woff') format('woff');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'ABC Arizona Sans Regular';
+            src: url('./fonts/ABCArizonaSans-Regular-Trial.woff2') format('woff2'),
+                 url('./fonts/ABCArizonaSans-Regular-Trial.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        :root {
+            --dark-earth: #342e29;
+            --rich-red: #86312b;
+            --deep-blue: #002140;
+            --soft-gray: #e7e4df;
+            --off-white: #fdfbf7;
+            --light-blue: #b0ddf1;
+            --coral-orange: #ff774a;
+            --soft-green: #b8dc99;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'ABC Arizona Regular', serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: var(--dark-earth);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .slide {
+            width: 100%;
+            max-width: 1000px;
+            height: 85vh;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            padding: 3rem;
+            position: relative;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            border-bottom: 2px solid var(--soft-gray);
+            padding-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-family: 'ABC Arizona Regular', serif;
+            font-size: 2.2rem;
+            color: var(--dark-earth);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 1rem;
+            color: var(--rich-red);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .infrastructure-section {
+            background: linear-gradient(135deg, var(--light-blue) 0%, rgba(176, 221, 241, 0.3) 100%);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 33, 64, 0.1);
+            position: relative;
+        }
+
+        .infrastructure-section.analytics {
+            background: linear-gradient(135deg, var(--coral-orange) 0%, rgba(255, 119, 74, 0.3) 100%);
+        }
+
+        .infrastructure-section h3 {
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 1.3rem;
+            color: var(--deep-blue);
+            margin-bottom: 1rem;
+            font-weight: bold;
+            border-bottom: 1px solid rgba(0, 33, 64, 0.2);
+            padding-bottom: 0.5rem;
+        }
+
+        .infrastructure-section.analytics h3 {
+            color: #cc3d00;
+            border-bottom-color: rgba(204, 61, 0, 0.2);
+        }
+
+        .status-badge {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 0.7rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: bold;
+        }
+
+        .status-complete {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .status-progress {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+
+        .description {
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 0.9rem;
+            color: var(--dark-earth);
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .sub-details {
+            background-color: rgba(255, 255, 255, 0.6);
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 3px solid var(--deep-blue);
+        }
+
+        .infrastructure-section.analytics .sub-details {
+            border-left-color: #cc3d00;
+        }
+
+        .sub-details ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sub-details li {
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 0.85rem;
+            color: var(--deep-blue);
+            margin-bottom: 0.5rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .infrastructure-section.analytics .sub-details li {
+            color: #cc3d00;
+        }
+
+        .sub-details li:before {
+            content: "▸";
+            color: var(--rich-red);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .slide-number {
+            position: absolute;
+            bottom: 1rem;
+            right: 1.5rem;
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 0.8rem;
+            color: var(--deep-blue);
+            opacity: 0.6;
+        }
+
+        .slide-navigation {
+            position: absolute;
+            bottom: 1rem;
+            left: 1.5rem;
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .nav-button {
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 0.7rem;
+            padding: 0.4rem 0.8rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--deep-blue);
+            text-decoration: none;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 33, 64, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background-color: var(--coral-orange);
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        .nav-button:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+    </style>
+    <link rel="stylesheet" href="slide-fixes.css">
+</head>
+
+<body>
+    <div class="slide">
+        <div class="header">
+            <h1>And more...</h1>
+            <div class="subtitle">BI Team Review - June 2025</div>
+        </div>
+
+        <div class="content">
+            <div class="infrastructure-section">
+                <div class="status-badge status-complete">Complete</div>
+                <h3>CRM Migration</h3>
+                <div class="description">
+                   We have a one-click sync setup already intact with Pipedrive. We are planning to declutter. Things are delayed here honestly, but we shall get it done and present data from Zoho CRM next month and not Pipedrive.</div>
+                <div class="sub-details">
+                    <ul>
+                        <li>Planning to declutter and setup non-disruptive migration</li> 
+                        <li>Things are delayed here honestly, but we shall get it done and present data from Zoho CRM next month and not Pipedrive.</li>
+                        
+                    </ul>
+                </div>
+            </div>
+
+            <div class="infrastructure-section analytics">
+                <div class="status-badge status-progress">Active</div>
+                <h3>Data Analysis Dashboards</h3>
+                <div class="description">
+                    Comprehensive analytic boards with MCP integration for seamless querying and processind data.
+                </div>
+                <div class="sub-details">
+                    <ul>
+                        <li>Instagram analytics integration</li>
+                        <li>Ads performance tracking dashboard</li>
+                        <li>SEO metrics and reporting</li>
+                        <li>Email campaign analytics</li>
+                        <li>Website traffic and conversion tracking</li>
+                        <li>Pipedrive CRM data integration</li>
+                        <li>MCP's built to query from all data sources</li>
+                        <li>Generating quick analysis reports</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+</html> 

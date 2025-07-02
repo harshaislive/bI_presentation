@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BI Updates - June 2025</title>
+    
+    <style>
+        @font-face {
+            font-family: 'ABC Arizona Regular';
+            src: url('./fonts/ABCArizonaFlare-Regular-Trial.woff2') format('woff2'),
+                url('./fonts/ABCArizonaFlare-Regular-Trial.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'ABC Arizona Light';
+            src: url('./fonts/ABCArizonaFlare-Light-Trial.woff2') format('woff2'),
+                url('./fonts/ABCArizonaFlare-Light-Trial.woff') format('woff');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'ABC Arizona Sans Regular';
+            src: url('./fonts/ABCArizonaSans-Regular-Trial.woff2') format('woff2'),
+                 url('./fonts/ABCArizonaSans-Regular-Trial.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        :root {
+            --dark-earth: #342e29;
+            --rich-red: #86312b;
+            --forest-green: #344736;
+            --deep-blue: #002140;
+            --soft-gray: #e7e4df;
+            --off-white: #fdfbf7;
+            --soft-green: #b8dc99;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'ABC Arizona Regular', serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: var(--dark-earth);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .slide {
+            width: 100%;
+            max-width: 1000px;
+            height: 85vh;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            padding: 3rem;
+            position: relative;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            border-bottom: 2px solid var(--soft-gray);
+            padding-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-family: 'ABC Arizona Regular', serif;
+            font-size: 2.2rem;
+            color: var(--dark-earth);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 1rem;
+            color: var(--rich-red);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            height: 100%;
+        }
+
+        .tech-card {
+            background: linear-gradient(135deg, var(--soft-green) 0%, rgba(184, 220, 153, 0.3) 100%);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(52, 71, 54, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tech-card h3 {
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 1.1rem;
+            color: var(--forest-green);
+            margin-bottom: 0.8rem;
+            font-weight: bold;
+            border-bottom: 1px solid rgba(52, 71, 54, 0.2);
+            padding-bottom: 0.5rem;
+        }
+
+        .tech-card .progress {
+            font-family: 'ABC Arizona Regular', serif;
+            font-size: 1.3rem;
+            color: var(--dark-earth);
+            font-weight: bold;
+            margin-bottom: 0.8rem;
+        }
+
+        .tech-card .description {
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 0.85rem;
+            color: var(--deep-blue);
+            line-height: 1.4;
+            flex-grow: 1;
+        }
+
+        .tech-card.dashboard {
+            background: linear-gradient(135deg, #ffd700 0%, rgba(255, 215, 0, 0.3) 100%);
+        }
+
+        .tech-card.dashboard h3 {
+            color: #b8860b;
+            border-bottom-color: rgba(184, 134, 11, 0.2);
+        }
+
+        .tech-card.voice-bot {
+            background: linear-gradient(135deg, #dda0dd 0%, rgba(221, 160, 221, 0.3) 100%);
+        }
+
+        .tech-card.voice-bot h3 {
+            color: #8b008b;
+            border-bottom-color: rgba(139, 0, 139, 0.2);
+        }
+
+        .tech-card.tracker {
+            background: linear-gradient(135deg, #87ceeb 0%, rgba(135, 206, 235, 0.3) 100%);
+        }
+
+        .tech-card.tracker h3 {
+            color: #4682b4;
+            border-bottom-color: rgba(70, 130, 180, 0.2);
+        }
+
+        .slide-number {
+            position: absolute;
+            bottom: 1rem;
+            right: 1.5rem;
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 0.8rem;
+            color: var(--deep-blue);
+            opacity: 0.6;
+        }
+
+        .slide-navigation {
+            position: absolute;
+            bottom: 1rem;
+            left: 1.5rem;
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .nav-button {
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 0.7rem;
+            padding: 0.4rem 0.8rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--deep-blue);
+            text-decoration: none;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 33, 64, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background-color: var(--soft-green);
+            transform: translateY(-1px);
+        }
+
+        .nav-button:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+    </style>
+    <link rel="stylesheet" href="slide-fixes.css">
+</head>
+
+<body>
+    <div class="slide">
+        <div class="header">
+            <h1>BI Updates</h1>
+            <div class="subtitle">BI Team Review - June 2025</div>
+        </div>
+
+        <div class="content">
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <h3>Vector Video Search Engine</h3>
+                    <div class="progress">60% Complete</div>
+                    <div class="description">
+                        Video data vectorization in progress(75/8000+ videos processed so far). Tests show much faster performance and enables retrieval of all images from Dropbox. Problems do exist in terms of accuracy, but we are expecting some frontier models releasing this month which can help us train our vectors to be powerful.
+                    </div>
+                </div>
+
+                <div class="tech-card tracker">
+                    <h3>Internal Upgrades</h3>
+                    <div class="progress">Smart workflows and new skills & learnings</div>
+                    <div class="description">
+                        We started implementing smart AI console workflows that are helping us get things done faster and smarter. What does it mean?
+                    </div>
+                </div>
+
+                <div class="tech-card dashboard">
+                    <h3>BSC Dashboard</h3>
+                    <div class="progress">95% Implemented</div>
+                    <div class="description">
+                        Nearly complete. Only response rate percentage pending - planning to introduce worker mechanism.(Where once we send a message to a user, we perform a fetch for response after 3-days and calculate percentage of responses.)
+                    </div>
+                </div>
+
+                <div class="tech-card voice-bot">
+                    <h3>Bespoke Engine</h3>
+                    <div class="progress">Voice Bot Ready</div>
+                    <div class="description">
+                        Successfully transformed into Voice bot. Lot's of testing done in last 48hrs, I shall bring this to our sales meet next time and we can have it doing it's job. 
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+</html> 

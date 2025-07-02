@@ -1,0 +1,410 @@
+/* BEFOREST PRESENTATION SYSTEM - BRAND COMPLIANT DESIGN */
+
+/* Brand Color Variables */
+:root {
+    /* Primary Colors */
+    --dark-earth: #342e29;
+    --rich-red: #86312b;
+    --forest-green: #344736;
+    --deep-blue: #002140;
+    
+    /* Secondary Colors */
+    --dark-brown: #4b3c35;
+    --burnt-red: #9e3430;
+    --olive-green: #415c43;
+    --dark-blue-secondary: #00385e;
+    --warm-yellow: #ffc083;
+    --coral-orange: #ff774a;
+    --soft-green: #b8dc99;
+    --light-blue: #b0ddf1;
+    
+    /* Neutrals */
+    --black: #000000;
+    --charcoal-gray: #51514d;
+    --soft-gray: #e7e4df;
+    --off-white: #fdfbf7;
+    
+    /* Typography Scale - Reduced by 30% */
+    --display-size: clamp(1.75rem, 3.5vw, 2.8rem);
+    --hero-size: clamp(1.26rem, 2.45vw, 1.96rem);
+    --sub-size: clamp(0.84rem, 1.75vw, 1.26rem);
+    --body-size: clamp(0.63rem, 1.05vw, 0.77rem);
+    --small-size: clamp(0.56rem, 0.84vw, 0.665rem);
+    
+    /* Spacing Scale */
+    --space-xs: 0.5rem;
+    --space-sm: 0.75rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-xxl: 3rem;
+}
+
+/* Reset and Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'ABC Arizona Sans Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    background: linear-gradient(135deg, var(--off-white) 0%, var(--soft-gray) 100%) !important;
+    color: var(--dark-earth) !important;
+    height: 100vh !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Slide Container - Sleek & Responsive */
+.slide {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: none !important;
+    background: var(--off-white) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    display: grid !important;
+    grid-template-rows: auto 1fr auto !important;
+    padding: var(--space-lg) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* Header - Brand Typography */
+.header {
+    text-align: left !important;
+    margin-bottom: var(--space-lg) !important;
+    padding-bottom: var(--space-md) !important;
+    border-bottom: 2px solid var(--dark-earth) !important;
+    background: none !important;
+}
+
+.header h1 {
+    font-family: 'ABC Arizona Regular', serif !important;
+    font-size: var(--hero-size) !important;
+    font-weight: 400 !important;
+    color: var(--dark-earth) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.02em !important;
+    margin-bottom: var(--space-xs) !important;
+    line-height: 1.1 !important;
+}
+
+.subtitle {
+    font-family: 'ABC Arizona Sans Regular', sans-serif !important;
+    font-size: var(--small-size) !important;
+    color: var(--rich-red) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    font-weight: 500 !important;
+}
+
+/* Content Area - Professional Layout */
+.content {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding-right: var(--space-sm) !important;
+    scrollbar-width: thin !important;
+    scrollbar-color: var(--charcoal-gray) transparent !important;
+}
+
+.content::-webkit-scrollbar {
+    width: 3px !important;
+}
+
+.content::-webkit-scrollbar-track {
+    background: transparent !important;
+}
+
+.content::-webkit-scrollbar-thumb {
+    background: var(--charcoal-gray) !important;
+    border-radius: 3px !important;
+}
+
+/* Grid Systems - Clean & Adaptive */
+.stats-grid,
+.tech-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: var(--space-md) !important;
+    margin-bottom: var(--space-lg) !important;
+}
+
+/* Card Components - Sleek Design */
+.stat-card,
+.tech-card,
+.goal-card,
+.infrastructure-section,
+.initiative-card,
+.mention-item {
+    background: var(--off-white) !important;
+    border: 1px solid var(--soft-gray) !important;
+    border-radius: 2px !important;
+    padding: var(--space-lg) !important;
+    box-shadow: 0 1px 3px rgba(52, 46, 41, 0.08) !important;
+    transition: all 0.2s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.stat-card::before,
+.tech-card::before,
+.goal-card::before {
+    content: '';
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 4px !important;
+    height: 100% !important;
+    background: var(--rich-red) !important;
+}
+
+.tech-card::before {
+    background: var(--forest-green) !important;
+}
+
+.goal-card::before {
+    background: var(--deep-blue) !important;
+}
+
+/* Card Hover Effects */
+.stat-card:hover,
+.tech-card:hover,
+.goal-card:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(52, 46, 41, 0.12) !important;
+}
+
+/* Typography in Cards */
+.stat-card h3,
+.tech-card h3,
+.goal-card h3,
+.infrastructure-section h3,
+.initiative-card h3,
+.mention-title {
+    font-family: 'ABC Arizona Regular', serif !important;
+    font-size: var(--sub-size) !important;
+    color: var(--dark-earth) !important;
+    font-weight: 400 !important;
+    margin-bottom: var(--space-sm) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.02em !important;
+}
+
+.stat-card .number,
+.target-number,
+.tech-card .progress,
+.conversion-target {
+    font-family: 'ABC Arizona Regular', serif !important;
+    font-size: var(--display-size) !important;
+    font-weight: 400 !important;
+    color: var(--dark-earth) !important;
+    margin-bottom: var(--space-sm) !important;
+    line-height: 1 !important;
+}
+
+.description,
+.tech-card .description,
+.stat-card .detail {
+    font-family: 'ABC Arizona Sans Regular', sans-serif !important;
+    font-size: var(--body-size) !important;
+    color: var(--charcoal-gray) !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+}
+
+/* Special Components */
+.total-section,
+.main-goal {
+    background: var(--dark-earth) !important;
+    color: var(--off-white) !important;
+    padding: var(--space-xl) !important;
+    border-radius: 2px !important;
+    text-align: center !important;
+    border: none !important;
+    position: relative !important;
+}
+
+.total-section::before,
+.main-goal::before {
+    content: '';
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 4px !important;
+    background: var(--rich-red) !important;
+}
+
+.total-section h3,
+.main-goal h3 {
+    color: var(--warm-yellow) !important;
+    font-size: var(--sub-size) !important;
+    margin-bottom: var(--space-md) !important;
+}
+
+.total-section .number,
+.main-goal .conversion-target {
+    color: var(--off-white) !important;
+    font-size: var(--display-size) !important;
+}
+
+/* Lists and Details */
+.sub-details,
+.details-section,
+.breakdown-section {
+    background: rgba(231, 228, 223, 0.3) !important;
+    border: none !important;
+    border-left: 3px solid var(--rich-red) !important;
+    padding: var(--space-md) !important;
+    margin-top: var(--space-md) !important;
+    border-radius: 0 !important;
+}
+
+.sub-details li,
+.details-list li,
+.location-item {
+    font-family: 'ABC Arizona Sans Regular', sans-serif !important;
+    font-size: var(--small-size) !important;
+    color: var(--dark-earth) !important;
+    margin-bottom: var(--space-xs) !important;
+    line-height: 1.3 !important;
+    padding-left: var(--space-md) !important;
+    position: relative !important;
+}
+
+.sub-details li::before,
+.details-list li::before,
+.location-item::before {
+    content: "—" !important;
+    color: var(--rich-red) !important;
+    font-weight: 700 !important;
+    position: absolute !important;
+    left: 0 !important;
+}
+
+/* Status Indicators */
+.status-badge,
+.status-indicator {
+    font-family: 'ABC Arizona Sans Regular', sans-serif !important;
+    font-size: var(--small-size) !important;
+    padding: var(--space-xs) var(--space-sm) !important;
+    background: var(--dark-earth) !important;
+    color: var(--off-white) !important;
+    border-radius: 0 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    font-weight: 500 !important;
+    border: none !important;
+}
+
+.status-complete {
+    background: var(--forest-green) !important;
+    color: var(--off-white) !important;
+}
+
+.status-progress {
+    background: var(--warm-yellow) !important;
+    color: var(--dark-earth) !important;
+}
+
+/* Navigation - Minimal & Clean */
+.slide-navigation {
+    position: fixed !important;
+    bottom: var(--space-md) !important;
+    left: var(--space-md) !important;
+    display: flex !important;
+    gap: var(--space-xs) !important;
+    z-index: 100 !important;
+}
+
+.slide-number {
+    position: fixed !important;
+    bottom: var(--space-md) !important;
+    right: var(--space-md) !important;
+    font-family: 'ABC Arizona Sans Regular', sans-serif !important;
+    font-size: var(--small-size) !important;
+    color: var(--charcoal-gray) !important;
+    z-index: 100 !important;
+}
+
+.nav-button {
+    font-family: 'ABC Arizona Sans Regular', sans-serif !important;
+    font-size: var(--small-size) !important;
+    padding: var(--space-xs) var(--space-sm) !important;
+    background: var(--dark-earth) !important;
+    color: var(--off-white) !important;
+    text-decoration: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    transition: all 0.2s ease !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+}
+
+.nav-button:hover {
+    background: var(--rich-red) !important;
+    transform: none !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .slide {
+        padding: var(--space-md) !important;
+    }
+    
+    .stats-grid,
+    .tech-grid {
+        grid-template-columns: 1fr !important;
+        gap: var(--space-sm) !important;
+    }
+    
+    .header {
+        margin-bottom: var(--space-md) !important;
+    }
+    
+    .stat-card,
+    .tech-card,
+    .goal-card {
+        padding: var(--space-md) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .slide {
+        padding: var(--space-sm) !important;
+    }
+    
+    .header h1 {
+        font-size: calc(var(--hero-size) * 0.8) !important;
+    }
+    
+    .stat-card .number,
+    .target-number {
+        font-size: calc(var(--display-size) * 0.7) !important;
+    }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .slide {
+        -webkit-font-smoothing: antialiased !important;
+        -moz-osx-font-smoothing: grayscale !important;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .slide-navigation,
+    .slide-number {
+        display: none !important;
+    }
+    
+    .slide {
+        height: auto !important;
+        padding: 2cm !important;
+        background: white !important;
+    }
+} 

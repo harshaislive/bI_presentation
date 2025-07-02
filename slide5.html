@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Metrics - June 2025</title>
+    
+    <style>
+        @font-face {
+            font-family: 'ABC Arizona Regular';
+            src: url('./fonts/ABCArizonaFlare-Regular-Trial.woff2') format('woff2'),
+                url('./fonts/ABCArizonaFlare-Regular-Trial.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'ABC Arizona Light';
+            src: url('./fonts/ABCArizonaFlare-Light-Trial.woff2') format('woff2'),
+                url('./fonts/ABCArizonaFlare-Light-Trial.woff') format('woff');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'ABC Arizona Sans Regular';
+            src: url('./fonts/ABCArizonaSans-Regular-Trial.woff2') format('woff2'),
+                 url('./fonts/ABCArizonaSans-Regular-Trial.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        :root {
+            --dark-earth: #342e29;
+            --rich-red: #86312b;
+            --forest-green: #344736;
+            --deep-blue: #002140;
+            --soft-gray: #e7e4df;
+            --off-white: #fdfbf7;
+            --light-blue: #b0ddf1;
+            --coral-orange: #ff774a;
+            --warm-yellow: #ffc083;
+            --soft-green: #b8dc99;
+            --success-green: #28a745;
+            --warning-yellow: #ffc107;
+            --danger-red: #dc3545;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'ABC Arizona Regular', serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: var(--dark-earth);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .slide {
+            width: 100%;
+            max-width: 1200px;
+            height: 85vh;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            padding: 2.5rem;
+            position: relative;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--soft-gray);
+            padding-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-family: 'ABC Arizona Regular', serif;
+            font-size: 2.2rem;
+            color: var(--dark-earth);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 1rem;
+            color: var(--rich-red);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto;
+            gap: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .metric-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--soft-gray);
+            position: relative;
+            transition: transform 0.2s ease;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .metric-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .qualification-card .metric-icon {
+            background: linear-gradient(135deg, var(--light-blue), var(--deep-blue));
+            color: white;
+        }
+
+
+
+        .visualization-card .metric-icon {
+            background: linear-gradient(135deg, var(--coral-orange), var(--rich-red));
+            color: white;
+        }
+
+        .enrichment-card .metric-icon {
+            background: linear-gradient(135deg, var(--warm-yellow), #d4a017);
+            color: white;
+        }
+
+        .metric-title {
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 1rem;
+            color: var(--deep-blue);
+            font-weight: bold;
+            margin-bottom: 0.8rem;
+        }
+
+        .metric-value {
+            font-family: 'ABC Arizona Regular', serif;
+            font-size: 1.8rem;
+            color: var(--dark-earth);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-percentage {
+            font-size: 1rem;
+            margin-left: 0.5rem;
+            color: var(--rich-red);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background-color: var(--soft-gray);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.8s ease;
+        }
+
+        .qualification-card .progress-fill {
+            background: linear-gradient(90deg, var(--light-blue), var(--deep-blue));
+        }
+
+        .metric-details {
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 0.8rem;
+            color: var(--deep-blue);
+            line-height: 1.4;
+        }
+
+
+
+
+
+        .status-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 0.6rem;
+            padding: 0.3rem 0.6rem;
+            border-radius: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .status-on-track {
+            background-color: rgba(40, 167, 69, 0.1);
+            color: var(--success-green);
+        }
+
+        .status-attention {
+            background-color: rgba(255, 193, 7, 0.1);
+            color: #b8860b;
+        }
+
+        .status-complete {
+            background-color: rgba(52, 71, 54, 0.1);
+            color: var(--forest-green);
+        }
+
+        .achievement-badge {
+            background: linear-gradient(135deg, var(--success-green), var(--forest-green));
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        .slide-navigation {
+            position: absolute;
+            bottom: 1rem;
+            left: 1.5rem;
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .nav-button {
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 0.7rem;
+            padding: 0.4rem 0.8rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--deep-blue);
+            text-decoration: none;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 33, 64, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background-color: #dda0dd;
+            transform: translateY(-1px);
+        }
+
+        .slide-number {
+            position: absolute;
+            bottom: 1rem;
+            right: 1.5rem;
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 0.8rem;
+            color: var(--deep-blue);
+            opacity: 0.6;
+        }
+
+        @keyframes progressAnimation {
+            from { width: 0%; }
+            to { width: var(--target-width); }
+        }
+
+        .progress-fill.animate {
+            animation: progressAnimation 1.5s ease-out;
+        }
+    </style>
+    <link rel="stylesheet" href="slide-fixes.css">
+</head>
+
+<body>
+    <div class="slide">
+        <div class="header">
+            <h1>Performance Metrics</h1>
+            <div class="subtitle">Data-Driven Insights - June 2025</div>
+        </div>
+
+        <div class="metrics-grid">
+            <!-- Qualification Performance -->
+            <div class="metric-card qualification-card">
+                <div class="metric-icon">📞</div>
+                <div class="status-badge status-attention">Needs Focus</div>
+                <div class="metric-title">Qualification Rate</div>
+                <div class="metric-value">
+                    29/180
+                    <span class="metric-percentage">16.1%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill animate" style="--target-width: 16.1%; width: 16.1%;"></div>
+                </div>
+                <div class="metric-details">
+                    Pre-scheduled calls target. Bhopal excluded due to calendar management challenges with local audience engagement patterns.
+                </div>
+            </div>
+
+
+
+            <!-- Data Enrichment Achievement -->
+            <div class="metric-card enrichment-card">
+                <div class="metric-icon">🚀</div>
+                <div class="status-badge status-complete">Complete</div>
+                <div class="metric-title">Data Enrichment Success</div>
+                <div class="achievement-badge">Target Exceeded</div>
+                <div class="metric-value">
+                    200 Deals
+                </div>
+                <div class="metric-details">
+                    <strong>Completed:</strong> 200 deals enriched in Bhopal Pipeline<br>
+                    <strong>Capacity:</strong> Tested & optimized for 5,000+ deals<br>
+                    <strong>Promise:</strong> Originally committed to 3,000 deals<br>
+                    <strong>Status:</strong> Ready for on-demand deployment with pattern identification
+                </div>
+            </div>
+
+            <!-- Interactive Visualization Progress -->
+            <div class="metric-card visualization-card">
+                <div class="metric-icon">📊</div>
+                <div class="status-badge status-on-track">In Progress</div>
+                <div class="metric-title">Interactive Visualization Platform</div>
+                <div class="metric-value">
+                    75%
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill animate" style="--target-width: 75%; width: 75%; background: linear-gradient(90deg, var(--coral-orange), var(--rich-red));"></div>
+                </div>
+                <div class="metric-details">
+                    <strong>360° Interactive Plot Selection:</strong> Core functionality implemented<br>
+                    <strong>Video Integration:</strong> API connections established<br>
+                    <strong>Next Phase:</strong> User testing & refinement<br>
+                    <strong>Timeline:</strong> Production ready by end of July
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script>
+        // Animate progress bars on load
+        window.addEventListener('load', function() {
+            const progressBars = document.querySelectorAll('.progress-fill');
+            progressBars.forEach(bar => {
+                bar.classList.add('animate');
+            });
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notable Mentions - June 2025</title>
+    
+    <style>
+        @font-face {
+            font-family: 'ABC Arizona Regular';
+            src: url('./fonts/ABCArizonaFlare-Regular-Trial.woff2') format('woff2'),
+                url('./fonts/ABCArizonaFlare-Regular-Trial.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'ABC Arizona Light';
+            src: url('./fonts/ABCArizonaFlare-Light-Trial.woff2') format('woff2'),
+                url('./fonts/ABCArizonaFlare-Light-Trial.woff') format('woff');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'ABC Arizona Sans Regular';
+            src: url('./fonts/ABCArizonaSans-Regular-Trial.woff2') format('woff2'),
+                 url('./fonts/ABCArizonaSans-Regular-Trial.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        :root {
+            --dark-earth: #342e29;
+            --rich-red: #86312b;
+            --forest-green: #344736;
+            --deep-blue: #002140;
+            --soft-gray: #e7e4df;
+            --off-white: #fdfbf7;
+            --light-blue: #b0ddf1;
+            --coral-orange: #ff774a;
+            --warm-yellow: #ffc083;
+            --soft-green: #b8dc99;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'ABC Arizona Regular', serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: var(--dark-earth);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .slide {
+            width: 100%;
+            max-width: 1000px;
+            height: 85vh;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            padding: 3rem;
+            position: relative;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            border-bottom: 2px solid var(--soft-gray);
+            padding-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-family: 'ABC Arizona Regular', serif;
+            font-size: 2.2rem;
+            color: var(--dark-earth);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 1rem;
+            color: var(--rich-red);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .mention-item {
+            background: linear-gradient(135deg, var(--soft-green) 0%, rgba(184, 220, 153, 0.3) 100%);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(52, 71, 54, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .mention-item.functionality {
+            background: linear-gradient(135deg, var(--coral-orange) 0%, rgba(255, 119, 74, 0.3) 100%);
+        }
+
+        .mention-item.updates {
+            background: linear-gradient(135deg, var(--light-blue) 0%, rgba(176, 221, 241, 0.3) 100%);
+        }
+
+        .mention-item.mcp {
+            background: linear-gradient(135deg, var(--warm-yellow) 0%, rgba(255, 192, 131, 0.3) 100%);
+        }
+
+        .mention-item.voice-bots {
+            background: linear-gradient(135deg, #dda0dd 0%, rgba(221, 160, 221, 0.3) 100%);
+        }
+
+        .mention-number {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: var(--deep-blue);
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 0.9rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .mention-content {
+            flex-grow: 1;
+        }
+
+        .mention-title {
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 1.1rem;
+            color: var(--deep-blue);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .mention-item.functionality .mention-title {
+            color: #cc3d00;
+        }
+
+        .mention-item.voice-bots .mention-title {
+            color: #8b008b;
+        }
+
+        .mention-item.mcp .mention-title {
+            color: #b8860b;
+        }
+
+        .mention-description {
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 0.85rem;
+            color: var(--deep-blue);
+            line-height: 1.4;
+        }
+
+        .mention-note {
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 0.75rem;
+            color: var(--deep-blue);
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        .slide-navigation {
+            position: absolute;
+            bottom: 1rem;
+            left: 1.5rem;
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .nav-button {
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 0.7rem;
+            padding: 0.4rem 0.8rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--deep-blue);
+            text-decoration: none;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 33, 64, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background-color: #ffd700;
+            transform: translateY(-1px);
+        }
+
+        .nav-button:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .slide-number {
+            position: absolute;
+            bottom: 1rem;
+            right: 1.5rem;
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 0.8rem;
+            color: var(--deep-blue);
+            opacity: 0.6;
+        }
+    </style>
+    <link rel="stylesheet" href="slide-fixes.css">
+</head>
+
+<body>
+    <div class="slide">
+        <div class="header">
+            <h1>Notable Mentions</h1>
+            <div class="subtitle">BI Team Review - June 2025</div>
+        </div>
+
+        <div class="content">
+            <div class="mention-item functionality">
+                <div class="mention-number">1</div>
+                <div class="mention-content">
+                    <div class="mention-title">Data Enrichment Functionality</div>
+                    <div class="mention-description">
+                        With Conversions API in place, this helps us train our facebook pixel data to laser target people in coming months. 
+                    </div>
+                </div>
+            </div>
+
+            <div class="mention-item updates">
+                <div class="mention-number">2</div>
+                <div class="mention-content">
+                    <div class="mention-title">Curation of Updates (Be Updated)</div>
+                    <div class="mention-description">
+                        We have teams.beforest.co where BI team is currently adding all tools we have ever made in Beforest context. We shall take this opportunity to make things better and also build better ones.
+                    </div>
+                    <div class="mention-note">
+                        Ongoing process for maintaining current information systems
+                    </div>
+                </div>
+            </div>
+
+            <div class="mention-item mcp">
+                <div class="mention-number">3</div>
+                <div class="mention-content">
+                    <div class="mention-title">MCP's (Model Context Protocol)</div>
+                    <div class="mention-description">
+                        Advanced integration protocol for seamless data querying across platforms
+                    </div>
+                </div>
+            </div>
+
+            <div class="mention-item voice-bots">
+                <div class="mention-number">4</div>
+                <div class="mention-content">
+                    <div class="mention-title">Voice Bots (Struggling in consistency)</div>
+                    <div class="mention-description">
+                        Voice bot implementation challenges with consistency. We have hit a good strike rate with this in last 48hrs.
+                    </div>
+                </div>
+            </div>
+
+            <div class="mention-item">
+                <div class="mention-number">5</div>
+                <div class="mention-content">
+                    <div class="mention-title">Growth Opportunity</div>
+                    <div class="mention-description">
+                        Analysis of General Deals vs Coffee Meet-ups performance difference
+                        <br><br>
+                        <a href="https://docs.google.com/document/d/1PtFCNzX0xCz2jpLAiEftI1xltit8sni3mZI1qujfKS0/edit?tab=t.0" target="_blank" style="color: var(--rich-red); text-decoration: underline; font-weight: bold;">📄 View Growth Opportunity Document</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+</html> 
