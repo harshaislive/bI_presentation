@@ -16,15 +16,6 @@
         }
 
         @font-face {
-            font-family: 'ABC Arizona Light';
-            src: url('./fonts/ABCArizonaFlare-Light-Trial.woff2') format('woff2'),
-                url('./fonts/ABCArizonaFlare-Light-Trial.woff') format('woff');
-            font-weight: 300;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        @font-face {
             font-family: 'ABC Arizona Sans Regular';
             src: url('./fonts/ABCArizonaSans-Regular-Trial.woff2') format('woff2'),
                  url('./fonts/ABCArizonaSans-Regular-Trial.woff') format('woff');
@@ -38,8 +29,6 @@
             --rich-red: #86312b;
             --deep-blue: #002140;
             --soft-gray: #e7e4df;
-            --off-white: #fdfbf7;
-            --light-blue: #b0ddf1;
         }
 
         * {
@@ -68,86 +57,25 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             display: flex;
             flex-direction: column;
-            padding: 3rem;
-            position: relative;
-        }
-
-        .header {
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            margin-bottom: 3rem;
-            border-bottom: 2px solid var(--soft-gray);
-            padding-bottom: 1.5rem;
+            padding: 3rem;
         }
 
         h1 {
             font-family: 'ABC Arizona Regular', serif;
-            font-size: 2.2rem;
+            font-size: 3.5rem;
             color: var(--dark-earth);
-            margin-bottom: 0.5rem;
-            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
         }
 
         .subtitle {
             font-family: 'ABC Arizona Sans Regular', sans-serif;
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: var(--rich-red);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .content {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .welcome-section {
-            background: linear-gradient(135deg, var(--light-blue) 0%, rgba(176, 221, 241, 0.3) 100%);
-            padding: 2.5rem;
-            border-radius: 8px;
-            border: 1px solid rgba(0, 33, 64, 0.1);
-            margin-bottom: 2rem;
-        }
-
-        .welcome-section h2 {
-            font-family: 'ABC Arizona Sans Regular', sans-serif;
-            font-size: 1.3rem;
-            color: var(--deep-blue);
-            margin-bottom: 1rem;
-            font-weight: bold;
-        }
-
-        .welcome-section p {
-            font-family: 'ABC Arizona Sans Regular', sans-serif;
-            font-size: 1rem;
-            color: var(--dark-earth);
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        .agenda-section {
-            background: linear-gradient(135deg, var(--rich-red) 0%, rgba(134, 49, 43, 0.8) 100%);
-            color: white;
-            padding: 2rem;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .agenda-section h3 {
-            font-family: 'ABC Arizona Sans Regular', sans-serif;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .agenda-list {
-            font-family: 'ABC Arizona Sans Regular', sans-serif;
-            font-size: 0.9rem;
-            line-height: 1.8;
-            opacity: 0.95;
+            opacity: 0.8;
         }
     </style>
     <link rel="stylesheet" href="slide-fixes.css">
@@ -155,28 +83,8 @@
 
 <body>
     <div class="slide">
-        <div class="header">
-            <h1>BI Team Review</h1>
-            <div class="subtitle">June 2025 • Data-Driven Excellence</div>
-        </div>
-
-        <div class="content">
-            <div class="welcome-section">
-                <h2>Welcome to Our Monthly Review</h2>
-                <p>This presentation showcases our team's achievements, performance metrics, and strategic initiatives that are transforming Beforest's sustainable living mission through data-driven innovation.</p>
-                <p><strong>Today's Focus:</strong> Performance analytics, project updates, BSC metrics, and our breakthrough AI voice agent demonstration.</p>
-            </div>
-
-            <div class="agenda-section">
-                <h3>What We'll Cover</h3>
-                <div class="agenda-list">
-                    Deal Generation Progress • Team Updates & Achievements<br>
-                    Project Management & Data Buckets • Performance Metrics<br>
-                    BSC Priority Goals • Notable Mentions<br>
-                    Live Voice Agent Demo • Our Team Philosophy
-                </div>
-            </div>
-        </div>
+        <h1>BI Team Review</h1>
+        <div class="subtitle">June 2025 • Data-Driven Excellence</div>
     </div>
 </body>
 </html> 
