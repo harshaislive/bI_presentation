@@ -250,6 +250,13 @@
             color: var(--deep-blue);
             opacity: 0.6;
         }
+        /* Ensure body has flex properties for centering if .slide itself doesn't fill viewport */
+        body {
+            display: flex; /* Or grid */
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh; /* Ensure full viewport height for centering */
+        }
     </style>
     <link rel="stylesheet" href="slide-fixes.css">
 </head>
@@ -295,8 +302,7 @@
                     </ul>
                 </div>
             </div>
-
-
+        <!-- Removed individual slide navigation and slide number -->
     </div>
 </body>
 </html> 

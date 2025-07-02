@@ -178,81 +178,74 @@
             color: #D4AF37;
         }
 
-        @media (max-width: 768px) {
-            body {
-                padding: 15px;
+        /* Removed responsive styles for table as it will be handled by slide-fixes.css or a new table style */
+        /* Ensure body has flex properties for centering if .slide itself doesn't fill viewport */
+        body {
+             /* Basic body styling from slide-fixes.css will apply */
+            display: flex; /* Or grid */
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh; /* Ensure full viewport height for centering */
+            margin:0;
+            padding:0;
         }
-
-            .slide-header h1 {
-                font-size: 1.8em;
-            }
-
-            .metrics-table {
-                font-size: 0.8em;
-            }
-
-            .metrics-table th,
-            .metrics-table td {
-                padding: 8px 10px;
-        }
-
-            .metrics-table th:nth-child(4),
-            .metrics-table td:nth-child(4) {
-                display: none;
-            }
-        }
+        /* Styles for table (.metrics-table, .metric-name etc.) should be moved to slide-fixes.css or a specific table component CSS if this layout is reused. */
+        /* For now, keeping them here but ideally they would be centralized. */
     </style>
 </head>
 <body>
-    <div class="slide-header">
-        <h1>BSC Metrics & Targets (Part 2)</h1>
-        <p class="subtitle">Operations & Process Metrics • July Priority Goals</p>
+    <div class="slide"> <!-- Standard slide wrapper -->
+        <div class="header"> <!-- Standard header -->
+            <h1>BSC Metrics & Targets (Part 2)</h1>
+            <div class="subtitle">Operations & Process Metrics • July Priority Goals</div>
         </div>
 
-    <div class="metrics-container">
-        <table class="metrics-table">
-            <thead>
-                <tr>
-                    <th style="width: 50%;">Metric</th>
-                    <th style="width: 20%;">Target</th>
-                    <th style="width: 20%;">Current Status</th>
-                    <th style="width: 10%;">Indicator</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="metric-name">Percentage digitalization achieved (team-wise)</td>
-                    <td class="target-value">20% YoY</td>
-                    <td class="status-value status-on-track">Current status will be established by July</td>
-                    <td><span class="status-indicator indicator-on-track">On Track</span></td>
-                </tr>
-                <tr>
-                    <td class="metric-name">Number of critical workflows</td>
-                    <td class="target-value">1 per quarter per team</td>
-                    <td class="status-value status-on-track">Active with Bewild, CE, Member Onboarding. In-progress for other teams.</td>
-                    <td><span class="status-indicator indicator-pace-up">Pace-up</span></td>
-                </tr>
-                <tr>
-                    <td class="metric-name">Number of bottlenecks identified</td>
-                    <td class="target-value">1 per quarter</td>
-                    <td class="status-value status-on-track">In-progress, will be established by July end</td>
-                    <td><span class="status-indicator indicator-on-track">On Track</span></td>
-                </tr>
-                <tr>
-                    <td class="metric-name">Number of solutions proposed</td>
-                    <td class="target-value">1 per quarter</td>
-                    <td class="status-value status-on-track">In-progress</td>
-                    <td><span class="status-indicator indicator-on-track">On Track</span></td>
-                </tr>
-            </tbody>
-        </table>
-                    </div>
-                    
-    <div class="priority-note">
-        <div class="icon">⚙️</div>
-        <p>Operations & Process optimization metrics for systematic improvement</p>
+        <div class="content"> <!-- Standard content wrapper -->
+            <div class="metrics-container"> <!-- This container can remain if it's for specific styling of the table area -->
+                <table class="metrics-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 50%;">Metric</th>
+                            <th style="width: 20%;">Target</th>
+                            <th style="width: 20%;">Current Status</th>
+                            <th style="width: 10%;">Indicator</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="metric-name">Percentage digitalization achieved (team-wise)</td>
+                            <td class="target-value">20% YoY</td>
+                            <td class="status-value status-on-track">Current status will be established by July</td>
+                            <td><span class="status-indicator indicator-on-track">On Track</span></td>
+                        </tr>
+                        <tr>
+                            <td class="metric-name">Number of critical workflows</td>
+                            <td class="target-value">1 per quarter per team</td>
+                            <td class="status-value status-on-track">Active with Bewild, CE, Member Onboarding. In-progress for other teams.</td>
+                            <td><span class="status-indicator indicator-pace-up">Pace-up</span></td>
+                        </tr>
+                        <tr>
+                            <td class="metric-name">Number of bottlenecks identified</td>
+                            <td class="target-value">1 per quarter</td>
+                            <td class="status-value status-on-track">In-progress, will be established by July end</td>
+                            <td><span class="status-indicator indicator-on-track">On Track</span></td>
+                        </tr>
+                        <tr>
+                            <td class="metric-name">Number of solutions proposed</td>
+                            <td class="target-value">1 per quarter</td>
+                            <td class="status-value status-on-track">In-progress</td>
+                            <td><span class="status-indicator indicator-on-track">On Track</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="priority-note"> <!-- This can remain as a styled footer element -->
+                <div class="icon">⚙️</div>
+                <p>Operations & Process optimization metrics for systematic improvement</p>
+            </div>
+        </div>
+        <!-- Removed individual slide navigation and slide number -->
     </div>
-
-
 </body>
 </html> 

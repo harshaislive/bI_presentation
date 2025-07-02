@@ -208,20 +208,29 @@
         }
 
         /* Hide original table and header if not used */
-        .slide-header, .metrics-container, .priority-note {
-            display: none;
+        /* Removed .slide-header, .metrics-container, .priority-note display:none as these elements are not part of this slide's new structure. */
+        /* Ensure body has flex properties for centering if .slide itself doesn't fill viewport */
+        body {
+            font-family: 'ABC Arizona Regular', serif; /* Base font from slide-fixes */
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); /* Base background */
+            color: var(--dark-earth); /* Base text color */
+            display: flex; /* Or grid */
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh; /* Ensure full viewport height for centering */
+            margin:0; /* Reset margin */
+            padding:0; /* Reset padding, slide itself will have padding */
         }
-
     </style>
 </head>
 <body>
-    <div class="slide"> <!-- Added .slide wrapper -->
-        <div class="header"> <!-- Added standard header -->
+    <div class="slide"> <!-- Standard slide wrapper -->
+        <div class="header"> <!-- Standard header -->
             <h1>BSC Metrics & Targets (Part 1)</h1>
             <div class="subtitle">Performance & Marketing Metrics • July Priority Goals</div>
         </div>
 
-        <div class="content"> <!-- Added content wrapper -->
+        <div class="content"> <!-- Standard content wrapper -->
             <!-- Row 1 -->
             <div class="infrastructure-section critical">
                 <div class="status-badge status-critical-badge">Critical</div>
@@ -263,7 +272,7 @@
                 </div>
             </div>
             <!-- Row 6 -->
-            <div class="infrastructure-section on-track"> <!-- Assuming "Establishing this" is on track for now -->
+            <div class="infrastructure-section on-track">
                 <div class="status-badge status-inprogress-badge">In Progress</div>
                 <h3>Open rate</h3>
                 <div class="description">
@@ -271,7 +280,7 @@
                 </div>
             </div>
             <!-- Row 7 -->
-            <div class="infrastructure-section on-track"> <!-- Assuming "Establishing this" is on track for now -->
+            <div class="infrastructure-section on-track">
                 <div class="status-badge status-inprogress-badge">In Progress</div>
                 <h3>Response rate</h3>
                 <div class="description">
@@ -280,10 +289,11 @@
             </div>
         </div>
 
-        <div class="priority-note-container"> <!-- Styled priority note -->
+        <div class="priority-note-container"> <!-- This can remain as a styled footer element if specific to this slide -->
             <div class="icon">🎯</div>
             <p>These BSC metrics are the PRIORITY GOALS for July monthly meetings</p>
         </div>
+        <!-- Removed individual slide navigation and slide number -->
     </div>
 </body>
 </html> 

@@ -236,9 +236,13 @@
             transform: translateY(-1px);
         }
 
-        .nav-button:disabled {
-            opacity: 0.4;
-            cursor: not-allowed;
+        /* Removed .nav-button and other local styles, will be handled by slide-fixes.css */
+        /* Ensure body has flex properties for centering if .slide itself doesn't fill viewport */
+        body {
+            display: flex; /* Or grid */
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh; /* Ensure full viewport height for centering */
         }
     </style>
     <link rel="stylesheet" href="slide-fixes.css">
@@ -286,8 +290,7 @@
                 </div>
             </div>
         </div>
-
-
+        <!-- Removed individual slide navigation and slide number -->
     </div>
 </body>
 </html> 

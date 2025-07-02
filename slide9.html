@@ -173,18 +173,13 @@
             animation: fadeInUp 1s ease-out 0.5s both;
         }
 
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.2rem;
-            }
-            
-            .main-quote {
-                font-size: 1.5rem;
-            }
-            
-            .motto-container {
-                padding: 2rem;
-            }
+        /* Removed media query, should be handled by slide-fixes.css */
+        /* Ensure body has flex properties for centering if .slide itself doesn't fill viewport */
+        body {
+            display: flex; /* Or grid */
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh; /* Ensure full viewport height for centering */
         }
     </style>
     <link rel="stylesheet" href="slide-fixes.css">
@@ -197,20 +192,23 @@
             <div class="subtitle">BI Team Excellence • Beforest</div>
         </div>
 
-        <div class="motto-container">
-            <div class="main-quote">
-                "In the age of AI, curiosity and the ability to learn new skills will be your superpower."
-            </div>
-            
-            <div class="attribution">
-                — Sundar Pichai, CEO of Google
-            </div>
-        </div>
+        <div class="content"> <!-- Added content wrapper -->
+            <div class="motto-container">
+                <div class="main-quote">
+                    "In the age of AI, curiosity and the ability to learn new skills will be your superpower."
+                </div>
 
-        <div class="closing-message">
-            <strong>Thank you</strong> • BI Team Review Complete<br>
-            <em>June 2025 • Building the future, one prototype at a time</em>
+                <div class="attribution">
+                    — Sundar Pichai, CEO of Google
+                </div>
+            </div>
+
+            <div class="closing-message">
+                <strong>Thank you</strong> • BI Team Review Complete<br>
+                <em>June 2025 • Building the future, one prototype at a time</em>
+            </div>
         </div>
+        <!-- Removed individual slide navigation and slide number -->
     </div>
 </body>
 </html> 

@@ -48,34 +48,13 @@
             padding: 2rem;
         }
 
-        .slide {
-            width: 100%;
-            max-width: 1000px;
-            height: 85vh;
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            display: flex;
-            flex-direction: column;
+        /* Styles for .slide, h1, .subtitle will be handled by slide-fixes.css */
+        /* Ensure body has flex properties for centering if .slide itself doesn't fill viewport */
+        body {
+            display: flex; /* Or grid */
             align-items: center;
             justify-content: center;
-            text-align: center;
-            padding: 3rem;
-        }
-
-        h1 {
-            font-family: 'ABC Arizona Regular', serif;
-            font-size: 3.5rem;
-            color: var(--dark-earth);
-            margin-bottom: 0.5rem;
-            line-height: 1.1;
-        }
-
-        .subtitle {
-            font-family: 'ABC Arizona Sans Regular', sans-serif;
-            font-size: 1.1rem;
-            color: var(--rich-red);
-            opacity: 0.8;
+            min-height: 100vh; /* Ensure full viewport height for centering */
         }
     </style>
     <link rel="stylesheet" href="slide-fixes.css">
@@ -83,8 +62,11 @@
 
 <body>
     <div class="slide">
-        <h1>BI Team Review</h1>
-        <div class="subtitle">June 2025 • Data-Driven Excellence</div>
+        <div class="header"> <!-- Standardized header -->
+            <h1>BI Team Review</h1>
+            <div class="subtitle">June 2025 • Data-Driven Excellence</div>
+        </div>
+        <!-- Content for slide 0 is primarily the title, so no separate .content div needed unless more elements are added -->
     </div>
 </body>
 </html> 

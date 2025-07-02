@@ -203,6 +203,13 @@
             color: var(--deep-blue);
             opacity: 0.6;
         }
+        /* Ensure body has flex properties for centering if .slide itself doesn't fill viewport */
+        body {
+            display: flex; /* Or grid */
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh; /* Ensure full viewport height for centering */
+        }
     </style>
     <link rel="stylesheet" href="slide-fixes.css">
 </head>
@@ -214,22 +221,21 @@
             <div class="subtitle">AI-Powered Voice Assistant</div>
         </div>
 
-        <div class="agent-interface">
-            <div class="mic-container" id="micContainer">
-                <div class="mic-icon">🎙️</div>
-            </div>
-            <div class="status-text" id="statusText">
-                Click the microphone to start the live demonstration
-            </div>
-            <div class="description">
-                Real-time bilingual sales scenarios with OpenAI Realtime API<br>
-                <small style="opacity: 0.7; font-size: 0.8em;">Press SPACE to mute/unmute during conversation</small>
+        <div class="content"> <!-- Added content wrapper -->
+            <div class="agent-interface">
+                <div class="mic-container" id="micContainer">
+                    <div class="mic-icon">🎙️</div>
+                </div>
+                <div class="status-text" id="statusText">
+                    Click the microphone to start the live demonstration
+                </div>
+                <div class="description">
+                    Real-time bilingual sales scenarios with OpenAI Realtime API<br>
+                    <small style="opacity: 0.7; font-size: 0.8em;">Press SPACE to mute/unmute during conversation</small>
+                </div>
             </div>
         </div>
-
-
-
-
+        <!-- Removed individual slide navigation and slide number -->
     </div>
 
     <script src="voice-agent-webrtc.js"></script>
