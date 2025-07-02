@@ -102,97 +102,113 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            gap: 1.5rem;
+            gap: 1.5rem; /* Matches slide3.html */
         }
 
-        .initiative-card {
-            background: linear-gradient(135deg, var(--warm-yellow) 0%, rgba(255, 192, 131, 0.3) 100%);
-            padding: 1.8rem;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 192, 131, 0.4);
+        /* Updated class name from initiative-card to infrastructure-section */
+        .infrastructure-section {
+            background: linear-gradient(135deg, var(--light-blue) 0%, rgba(176, 221, 241, 0.3) 100%); /* Matches slide3.html */
+            padding: 2rem; /* Matches slide3.html */
+            border-radius: 8px; /* Matches slide3.html */
+            border: 1px solid rgba(0, 33, 64, 0.1); /* Matches slide3.html */
             position: relative;
         }
 
-        .initiative-card.crm-integration {
-            background: linear-gradient(135deg, var(--olive-green) 0%, rgba(65, 92, 67, 0.3) 100%);
+        /* Added .analytics class for the second card to match slide3.html if needed, or use a different color scheme */
+        .infrastructure-section.data-buckets { /* Renamed from crm-integration for clarity */
+            background: linear-gradient(135deg, var(--soft-green) 0%, rgba(184, 220, 153, 0.3) 100%); /* Example: Using soft-green from root variables */
         }
 
-        .initiative-card h3 {
+        .infrastructure-section h3 {
             font-family: 'ABC Arizona Sans Regular', sans-serif;
-            font-size: 1.2rem;
-            color: var(--dark-earth);
-            margin-bottom: 0.8rem;
+            font-size: 1.3rem; /* Matches slide3.html */
+            color: var(--deep-blue); /* Matches slide3.html */
+            margin-bottom: 1rem; /* Matches slide3.html */
             font-weight: bold;
-            border-bottom: 1px solid rgba(52, 46, 41, 0.2);
-            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(0, 33, 64, 0.2); /* Matches slide3.html */
+            padding-bottom: 0.5rem; /* Matches slide3.html */
         }
 
-        .initiative-card.crm-integration h3 {
-            color: var(--forest-green);
-            border-bottom-color: rgba(52, 71, 54, 0.2);
+        .infrastructure-section.data-buckets h3 {
+            color: var(--forest-green); /* Example: Using forest-green */
+            border-bottom-color: rgba(52, 71, 54, 0.2); /* Example: Matching forest-green */
         }
 
         .description {
             font-family: 'ABC Arizona Sans Regular', sans-serif;
-            font-size: 0.85rem;
+            font-size: 0.9rem; /* Matches slide3.html */
             color: var(--dark-earth);
-            line-height: 1.4;
-            margin-bottom: 0.8rem;
+            line-height: 1.5; /* Matches slide3.html */
+            margin-bottom: 1rem; /* Matches slide3.html */
         }
 
-        .details-section {
-            background-color: rgba(255, 255, 255, 0.6);
-            padding: 0.8rem;
-            border-radius: 6px;
-            border-left: 3px solid var(--deep-blue);
+        /* Updated class name from details-section to sub-details */
+        .sub-details {
+            background-color: rgba(255, 255, 255, 0.6); /* Matches slide3.html */
+            padding: 1rem; /* Matches slide3.html */
+            border-radius: 6px; /* Matches slide3.html */
+            border-left: 3px solid var(--deep-blue); /* Matches slide3.html */
         }
 
-        .initiative-card.crm-integration .details-section {
-            border-left-color: var(--forest-green);
+        .infrastructure-section.data-buckets .sub-details {
+            border-left-color: var(--forest-green); /* Example: Matching forest-green */
         }
 
-        .details-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        /* Updated class name from details-list to ul (standard ul styling from slide3) */
+        .sub-details ul {
+            list-style: none; /* Matches slide3.html */
+            padding: 0; /* Matches slide3.html */
         }
 
-        .details-list li {
+        .sub-details li {
             font-family: 'ABC Arizona Sans Regular', sans-serif;
-            font-size: 0.8rem;
-            color: var(--deep-blue);
-            margin-bottom: 0.4rem;
-            padding-left: 1.2rem;
+            font-size: 0.85rem; /* Matches slide3.html */
+            color: var(--deep-blue); /* Matches slide3.html */
+            margin-bottom: 0.5rem; /* Matches slide3.html */
+            padding-left: 1.2rem; /* Matches slide3.html */
             position: relative;
-            line-height: 1.3;
+            /* line-height: 1.3; Removed, use default or slide3's implicit line height */
         }
 
-        .details-list li:before {
-            content: "▸";
-            color: var(--rich-red);
-            font-weight: bold;
+        .infrastructure-section.data-buckets .sub-details li {
+            color: var(--forest-green); /* Example: Matching forest-green */
+        }
+
+        .sub-details li:before {
+            content: "▸"; /* Matches slide3.html */
+            color: var(--rich-red); /* Matches slide3.html */
+            position: absolute; /* Matches slide3.html */
+            left: 0; /* Matches slide3.html */
+            top: 0; /* Matches slide3.html */
+            /* font-weight: bold; Removed, not in slide3.html */
+        }
+
+        /* .details-list li:last-child { Removed, not in slide3.html } */
+
+        /* Updated class name from status-indicator to status-badge and added variants */
+        .status-badge {
             position: absolute;
-            left: 0;
-            top: 0;
+            top: 1.5rem; /* Matches slide3.html */
+            right: 1.5rem; /* Matches slide3.html */
+            font-size: 0.7rem; /* Matches slide3.html */
+            padding: 0.3rem 0.8rem; /* Matches slide3.html */
+            border-radius: 20px; /* Matches slide3.html */
+            text-transform: uppercase; /* Matches slide3.html */
+            letter-spacing: 0.5px; /* Matches slide3.html */
+            font-weight: bold; /* Matches slide3.html */
         }
 
-        .details-list li:last-child {
-            margin-bottom: 0;
+        /* Added from slide3.html */
+        .status-complete {
+            background-color: #d4edda;
+            color: #155724;
         }
 
-        .status-indicator {
-            position: absolute;
-            top: 1.2rem;
-            right: 1.2rem;
-            font-size: 0.7rem;
-            padding: 0.3rem 0.6rem;
-            background-color: rgba(255, 255, 255, 0.9);
-            color: var(--deep-blue);
-            border-radius: 15px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        .status-progress {
+            background-color: #fff3cd;
+            color: #856404;
         }
+
 
         .slide-navigation {
             position: absolute;
@@ -246,14 +262,14 @@
         </div>
 
         <div class="content">
-            <div class="initiative-card">
-                <div class="status-indicator">Active</div>
+            <div class="infrastructure-section"> <!-- Updated class -->
+                <div class="status-badge status-progress">Active</div> <!-- Updated class and added status-progress -->
                 <h3>Project Digitalization</h3>
                 <div class="description">
                     Actively managed using Zoho Projects with comprehensive internal audit and observation processes in place.
                 </div>
-                <div class="details-section">
-                    <ul class="details-list">
+                <div class="sub-details"> <!-- Updated class -->
+                    <ul> <!-- Updated class -->
                         <li>Currently conducting internal audit and observations</li>
                         <li>Planning site visit to collective this month</li>
                         <li>Starting with Hyderabad location for initial assessment</li>
@@ -263,14 +279,14 @@
                 </div>
             </div>
 
-            <div class="initiative-card crm-integration">
-                <div class="status-indicator">Active</div>
+            <div class="infrastructure-section data-buckets"> <!-- Updated class and added specific class for this section -->
+                <div class="status-badge status-progress">Active</div> <!-- Updated class and added status-progress -->
                 <h3>Data Buckets</h3>
                 <div class="description">
                     We have a solid capturing mechanism right now with data coming across from various WhatsApp groups and we have also developed a pipeline to extract all data from our Google drives and process them into one big Knowledge repo.
                 </div>
-                <div class="details-section">
-                    <ul class="details-list">
+                <div class="sub-details"> <!-- Updated class -->
+                    <ul> <!-- Updated class -->
                         <li>Data capturing mechanism from various WhatsApp groups</li>
                         <li>Pipeline to extract all data from Google drives</li>
                         <li>Processing into one big Knowledge repository</li>

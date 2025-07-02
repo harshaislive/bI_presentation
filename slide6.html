@@ -7,266 +7,283 @@
     <link rel="stylesheet" href="slide-fixes.css">
     <style>
         @font-face {
-            font-family: 'ABC Arizona Flare';
+            font-family: 'ABC Arizona Regular';
             src: url('./fonts/ABCArizonaFlare-Regular-Trial.woff2') format('woff2'),
-                 url('./fonts/ABCArizonaFlare-Regular-Trial.woff') format('woff');
-            font-weight: 400;
+                url('./fonts/ABCArizonaFlare-Regular-Trial.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
             font-display: swap;
         }
 
         @font-face {
-            font-family: 'ABC Arizona Flare';
+            font-family: 'ABC Arizona Light';
             src: url('./fonts/ABCArizonaFlare-Light-Trial.woff2') format('woff2'),
-                 url('./fonts/ABCArizonaFlare-Light-Trial.woff') format('woff');
+                url('./fonts/ABCArizonaFlare-Light-Trial.woff') format('woff');
             font-weight: 300;
+            font-style: normal;
             font-display: swap;
         }
 
         @font-face {
-            font-family: 'ABC Arizona Sans';
+            font-family: 'ABC Arizona Sans Regular';
             src: url('./fonts/ABCArizonaSans-Regular-Trial.woff2') format('woff2'),
                  url('./fonts/ABCArizonaSans-Regular-Trial.woff') format('woff');
-            font-weight: 400;
+            font-weight: normal;
+            font-style: normal;
             font-display: swap;
+        }
+
+        :root {
+            --dark-earth: #342e29;
+            --rich-red: #86312b;
+            --deep-blue: #002140;
+            --soft-gray: #e7e4df;
+            --off-white: #fdfbf7;
+            --light-blue: #b0ddf1;
+            --coral-orange: #ff774a;
+            --soft-green: #b8dc99;
+            --warning-yellow: #ffc107; /* Added for attention status */
+            --danger-red: #dc3545; /* Added for critical status */
+            --success-green: #28a745; /* Added for on-track status */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'ABC Arizona Sans', sans-serif;
-            margin: 0;
-            padding: 20px;
-            background: linear-gradient(135deg, #002140 0%, #344736 100%);
-            color: white;
-            min-height: 100vh;
+            font-family: 'ABC Arizona Regular', serif; /* Changed from Sans to Regular like slide3 */
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); /* Light theme like slide3 */
+            color: var(--dark-earth); /* Dark text like slide3 */
+            height: 100vh;
+            display: flex;
+            align-items: center; /* Vertically center content */
+            justify-content: center; /* Horizontally center content */
+            padding: 2rem; /* Padding like slide3 */
+        }
+
+        .slide { /* Added .slide wrapper like slide3 */
+            width: 100%;
+            max-width: 1000px; /* Max width like slide3 */
+            height: 85vh; /* Height like slide3 */
+            background-color: white; /* White background for slide area */
+            border-radius: 12px; /* Rounded corners like slide3 */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Shadow like slide3 */
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            padding: 3rem; /* Padding like slide3 */
+            position: relative;
+            overflow-y: auto; /* Allow scrolling for content */
         }
 
-        .slide-header {
+        .header { /* Standard header style from slide3 */
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 3rem;
+            border-bottom: 2px solid var(--soft-gray);
+            padding-bottom: 1.5rem;
         }
 
-        .slide-header h1 {
-            font-family: 'ABC Arizona Flare', serif;
-            font-size: 2.1em;
-            font-weight: 300;
-            margin: 0 0 10px 0;
-            color: #D4AF37;
+        h1 { /* Standard h1 style from slide3 */
+            font-family: 'ABC Arizona Regular', serif;
+            font-size: 2.2rem;
+            color: var(--dark-earth);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
         }
 
-        .slide-header .subtitle {
-            font-size: 1.1em;
-            color: #B8B8B8;
-            margin: 0;
-        }
-
-        .metrics-container {
-            background: rgba(0, 0, 0, 0.6);
-            border-radius: 12px;
-            overflow: hidden;
-            margin: 0 auto;
-            max-width: 1200px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .metrics-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.9em;
-        }
-
-        .metrics-table th {
-            background: rgba(134, 49, 43, 0.8);
-            color: white;
-            padding: 12px 15px;
-            text-align: left;
-            font-family: 'ABC Arizona Flare', serif;
-            font-weight: 400;
-            font-size: 1em;
-        }
-
-        .metrics-table td {
-            padding: 10px 15px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            color: #ffffff;
-            background: rgba(0, 0, 0, 0.3);
-        }
-
-        .metrics-table tr:hover {
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .metric-name {
-            font-weight: 500;
-            color: #ffffff !important;
-        }
-
-        .target-value {
-            color: #FFD700 !important;
-            font-weight: 600;
-        }
-
-        .status-value {
-            font-weight: 600;
-            color: #ffffff !important;
-        }
-
-        .status-critical {
-            color: #ff4757 !important;
-            font-weight: 700;
-        }
-
-        .status-needs-attention {
-            color: #ffa502 !important;
-            font-weight: 700;
-        }
-
-        .status-on-track {
-            color: #2ed573 !important;
-            font-weight: 700;
-        }
-
-        .status-indicator {
-            display: inline-block;
-            padding: 3px 8px;
-            border-radius: 12px;
-            font-size: 0.75em;
-            font-weight: 600;
+        .subtitle { /* Standard subtitle style from slide3 */
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 1rem;
+            color: var(--rich-red);
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .indicator-critical {
-            background: rgba(255, 107, 107, 0.2);
-            color: #ff6b6b;
+        .content { /* Content area like slide3 */
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Align items to the top */
+            gap: 1.5rem; /* Gap between sections like slide3 */
         }
 
-        .indicator-attention {
-            background: rgba(255, 167, 38, 0.2);
-            color: #ffa726;
-        }
-
-        .indicator-on-track {
-            background: rgba(102, 187, 106, 0.2);
-            color: #66bb6a;
-        }
-
-        .priority-note {
-            background: rgba(212, 175, 55, 0.1);
-            border: 1px solid rgba(212, 175, 55, 0.3);
+        .infrastructure-section { /* Copied from slide3 */
+            background: linear-gradient(135deg, var(--light-blue) 0%, rgba(176, 221, 241, 0.3) 100%);
+            padding: 1.5rem; /* Adjusted padding for more content */
             border-radius: 8px;
-            padding: 15px;
-            margin-top: 20px;
+            border: 1px solid rgba(0, 33, 64, 0.1);
+            position: relative;
+        }
+
+        /* Added variations for different statuses */
+        .infrastructure-section.critical {
+            background: linear-gradient(135deg, #ffcccc 0%, rgba(255, 204, 204, 0.3) 100%);
+            border-left: 4px solid var(--danger-red);
+        }
+        .infrastructure-section.attention {
+            background: linear-gradient(135deg, #fff0cc 0%, rgba(255, 240, 204, 0.3) 100%);
+            border-left: 4px solid var(--warning-yellow);
+        }
+         .infrastructure-section.on-track {
+            background: linear-gradient(135deg, #ccffcc 0%, rgba(204, 255, 204, 0.3) 100%);
+            border-left: 4px solid var(--success-green);
+        }
+
+
+        .infrastructure-section h3 { /* Copied from slide3, adjusted font size */
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 1.1rem; /* Slightly smaller for table row content */
+            color: var(--deep-blue);
+            margin-bottom: 0.5rem; /* Reduced margin */
+            font-weight: bold;
+            /* Removed border-bottom for cleaner look in this context */
+        }
+
+        .description { /* Copied from slide3, can be used for details */
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 0.9rem;
+            color: var(--dark-earth);
+            line-height: 1.5;
+            margin-bottom: 0.5rem; /* Reduced margin */
+        }
+
+        .description strong { /* Make target/status values stand out */
+            font-weight: bold;
+            color: var(--rich-red);
+        }
+
+        .status-badge { /* Copied from slide3 */
+            position: absolute;
+            top: 1rem; /* Adjusted position */
+            right: 1rem; /* Adjusted position */
+            font-size: 0.7rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: bold;
+        }
+
+        /* Status badge colors from slide3, adapted */
+        .status-critical-badge { /* New class for critical status */
+            background-color: rgba(220, 53, 69, 0.1); /* danger-red with opacity */
+            color: var(--danger-red);
+        }
+        .status-attention-badge { /* New class for attention status */
+            background-color: rgba(255, 193, 7, 0.1); /* warning-yellow with opacity */
+            color: #b8860b; /* Darker yellow for text */
+        }
+        .status-on-track-badge { /* Renamed from status-complete/progress for clarity */
+            background-color: #d4edda; /* success-green light */
+            color: #155724; /* success-green dark */
+        }
+         .status-inprogress-badge { /* For "Establishing this / In-progress" */
+            background-color: #e7e4df; /* soft-gray */
+            color: var(--dark-earth);
+        }
+
+
+        .priority-note-container { /* Styling for the priority note at the bottom */
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background-color: rgba(228, 217, 190, 0.2); /* Softer gold background */
+            border-radius: 8px;
             text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.3);
         }
 
-        .priority-note .icon {
+        .priority-note-container .icon {
             font-size: 1.5em;
-            margin-bottom: 8px;
-            color: #D4AF37;
+            margin-bottom: 0.5rem;
+            color: var(--rich-red); /* Changed icon color */
         }
 
-        .priority-note p {
+        .priority-note-container p {
             margin: 0;
-            font-size: 0.9em;
-            color: #D4AF37;
+            font-family: 'ABC Arizona Sans Regular', sans-serif;
+            font-size: 0.9rem;
+            color: var(--dark-earth); /* Darker text for readability */
         }
 
-        @media (max-width: 768px) {
-            body {
-                padding: 15px;
+        /* Hide original table and header if not used */
+        .slide-header, .metrics-container, .priority-note {
+            display: none;
         }
 
-            .slide-header h1 {
-                font-size: 1.8em;
-            }
-
-            .metrics-table {
-                font-size: 0.8em;
-            }
-
-            .metrics-table th,
-            .metrics-table td {
-                padding: 8px 10px;
-        }
-
-            .metrics-table th:nth-child(4),
-            .metrics-table td:nth-child(4) {
-                display: none;
-            }
-        }
     </style>
 </head>
 <body>
-    <div class="slide-header">
-        <h1>BSC Metrics & Targets (Part 1)</h1>
-        <p class="subtitle">Performance & Marketing Metrics • July Priority Goals</p>
+    <div class="slide"> <!-- Added .slide wrapper -->
+        <div class="header"> <!-- Added standard header -->
+            <h1>BSC Metrics & Targets (Part 1)</h1>
+            <div class="subtitle">Performance & Marketing Metrics • July Priority Goals</div>
         </div>
 
-    <div class="metrics-container">
-        <table class="metrics-table">
-            <thead>
-                <tr>
-                    <th style="width: 50%;">Metric</th>
-                    <th style="width: 20%;">Target</th>
-                    <th style="width: 20%;">Current Status</th>
-                    <th style="width: 10%;">Indicator</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="metric-name">Cost per "event-attended" lead (3-month sliding window)</td>
-                    <td class="target-value">Rs. 2,000</td>
-                    <td class="status-value status-critical">Rs. 21,000</td>
-                    <td><span class="status-indicator indicator-critical">Critical</span></td>
-                </tr>
-                <tr>
-                    <td class="metric-name">Event attended / Total leads (3-month sliding window)</td>
-                    <td class="target-value">50%</td>
-                    <td class="status-value status-needs-attention">12.8% (23/180)</td>
-                    <td><span class="status-indicator indicator-attention">Attention</span></td>
-                </tr>
-                <tr>
-                    <td class="metric-name">Prospect-to-lead ratio (3-month sliding window, assuming 50% prospect conversion)</td>
-                    <td class="target-value">20%</td>
-                    <td class="status-value status-on-track">On track</td>
-                    <td><span class="status-indicator indicator-on-track">On Track</span></td>
-                </tr>
-                <tr>
-                    <td class="metric-name">Number of growth opportunities identified</td>
-                    <td class="target-value">1 per month</td>
-                    <td class="status-value status-on-track">On track (3 per quarter)</td>
-                    <td><span class="status-indicator indicator-on-track">On Track</span></td>
-                </tr>
-                <tr>
-                    <td class="metric-name">Delivery rate</td>
-                    <td class="target-value">99%</td>
-                    <td class="status-value status-on-track">100%</td>
-                    <td><span class="status-indicator indicator-on-track">On Track</span></td>
-                </tr>
-                <tr>
-                    <td class="metric-name">Open rate</td>
-                    <td class="target-value">50%</td>
-                    <td class="status-value status-on-track">Establishing this</td>
-                    <td><span class="status-indicator indicator-on-track">In-progress</span></td>
-                </tr>
-                <tr>
-                    <td class="metric-name">Response rate</td>
-                    <td class="target-value">30%</td>
-                    <td class="status-value status-on-track">Establishing this</td>
-                    <td><span class="status-indicator indicator-on-track">In-progress</span></td>
-                </tr>
+        <div class="content"> <!-- Added content wrapper -->
+            <!-- Row 1 -->
+            <div class="infrastructure-section critical">
+                <div class="status-badge status-critical-badge">Critical</div>
+                <h3>Cost per "event-attended" lead (3-month sliding window)</h3>
+                <div class="description">
+                    Target: <strong>Rs. 2,000</strong> | Current: <strong>Rs. 21,000</strong>
+                </div>
+            </div>
+            <!-- Row 2 -->
+            <div class="infrastructure-section attention">
+                <div class="status-badge status-attention-badge">Attention</div>
+                <h3>Event attended / Total leads (3-month sliding window)</h3>
+                <div class="description">
+                    Target: <strong>50%</strong> | Current: <strong>12.8% (23/180)</strong>
+                </div>
+            </div>
+            <!-- Row 3 -->
+            <div class="infrastructure-section on-track">
+                <div class="status-badge status-on-track-badge">On Track</div>
+                <h3>Prospect-to-lead ratio (3-month sliding window, assuming 50% prospect conversion)</h3>
+                <div class="description">
+                    Target: <strong>20%</strong> | Current: <strong>On track</strong>
+                </div>
+            </div>
+            <!-- Row 4 -->
+            <div class="infrastructure-section on-track">
+                <div class="status-badge status-on-track-badge">On Track</div>
+                <h3>Number of growth opportunities identified</h3>
+                <div class="description">
+                    Target: <strong>1 per month</strong> | Current: <strong>On track (3 per quarter)</strong>
+                </div>
+            </div>
+            <!-- Row 5 -->
+            <div class="infrastructure-section on-track">
+                <div class="status-badge status-on-track-badge">On Track</div>
+                <h3>Delivery rate</h3>
+                <div class="description">
+                    Target: <strong>99%</strong> | Current: <strong>100%</strong>
+                </div>
+            </div>
+            <!-- Row 6 -->
+            <div class="infrastructure-section on-track"> <!-- Assuming "Establishing this" is on track for now -->
+                <div class="status-badge status-inprogress-badge">In Progress</div>
+                <h3>Open rate</h3>
+                <div class="description">
+                    Target: <strong>50%</strong> | Current: <strong>Establishing this</strong>
+                </div>
+            </div>
+            <!-- Row 7 -->
+            <div class="infrastructure-section on-track"> <!-- Assuming "Establishing this" is on track for now -->
+                <div class="status-badge status-inprogress-badge">In Progress</div>
+                <h3>Response rate</h3>
+                <div class="description">
+                    Target: <strong>30%</strong> | Current: <strong>Establishing this</strong>
+                </div>
+            </div>
+        </div>
 
-            </tbody>
-        </table>
-                    </div>
-                    
-    <div class="priority-note">
-        <div class="icon">🎯</div>
-        <p>These BSC metrics are the PRIORITY GOALS for July monthly meetings</p>
+        <div class="priority-note-container"> <!-- Styled priority note -->
+            <div class="icon">🎯</div>
+            <p>These BSC metrics are the PRIORITY GOALS for July monthly meetings</p>
+        </div>
     </div>
-
-
 </body>
 </html> 
